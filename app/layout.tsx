@@ -10,7 +10,7 @@ import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
 export const metadata = {
-  image: "https://placehold.co/1200x630",
+  image: "https://www.project-skip.org/opengraph-image?b68401e0a41fcaf5",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
@@ -38,7 +38,7 @@ export const metadata = {
     description:
       "Join Skip's thriving tech community. Gain cutting-edge tech skills, connect with industry experts, and unlock opportunities. Start your tech journey today! #TechEducation #POCsInTech",
   },
-  site_name: "https://www.project-skip.org"
+  site_name: "https://project-skip.vercel.app/",
 };
 
 export default async function RootLayout({
@@ -56,7 +56,7 @@ export default async function RootLayout({
 
         {/* Open Graph / Facebook meta tags */}
         <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content={metadata.site_name} /> */}
+        <meta property="og:url" content={metadata.site_name} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.image} />
