@@ -22,7 +22,7 @@ export default async function OG() {
           justifyContent: "space-between", // Distributes space between the image and the text
           padding: "2rem",
           backgroundImage:
-            "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #966ce4 75%)",
+            "linear-gradient(to bottom right, #3ca0a6 25%, #ffffff 50%, #966ce4 75%)",
         }}
       >
         {/* Image Container */}
@@ -43,20 +43,6 @@ export default async function OG() {
         </div>
 
         {/* Text */}
-        <h1
-          style={{
-            fontSize: "100px",
-            fontFamily: "SF Pro",
-            background:
-              "linear-gradient(to bottom right, #000000 21.66%, #78716c 86.47%)",
-            backgroundClip: "text",
-            color: "transparent",
-            lineHeight: "5rem",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Project Skip
-        </h1>
       </div>
     ),
     {
