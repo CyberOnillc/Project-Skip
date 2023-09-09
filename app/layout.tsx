@@ -11,7 +11,7 @@ import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
 export const metadata = {
   image:
-    "https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png",
+    "https://project-skip.vercel.app/_next/image?url=%2FWebsite_Simple_Logo_1.png&w=256&q=75",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
