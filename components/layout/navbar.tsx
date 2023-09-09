@@ -151,17 +151,16 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {/* Mobile Menu */}
           {isSideBarOpen && (
             <Sidebar isOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen}>
-              <div className=" left-0 top-full mt-2 flex w-full flex-col space-y-4 rounded bg-white shadow-lg md:hidden">
-                {menuItemsArray.map((menuItems) =>
-                  menuItems.map((item) => (
-                    <Link href={item.MenuLinkURL} key={item.MenuLinkName}>
-                      <span className="block px-4 py-2 hover:bg-gray-200">
-                        {item.MenuLinkName}
-                      </span>
-                    </Link>
-                  )),
-                )}
+              <div className=" left-0 top-full mt-2 flex w-full flex-col space-y-4 rounded bg-white text-center shadow-lg md:hidden">
                 <div className="flex flex-col items-center space-y-4">
+                  {menuItemsArray.map((menuItems, index) => (
+                    <DropdownMenu
+                      key={index}
+                      menuData={menuItems}
+                      isOpen={openDropdownIndex === index}
+                      onToggle={() => toggleDropdown(index)}
+                    />
+                  ))}
                   <ShoppingCart />
                   <User />
                   <Search />
