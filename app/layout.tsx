@@ -1,4 +1,5 @@
 import "./globals.css";
+
 //eslint-disable-next-line
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
@@ -37,6 +38,7 @@ export const metadata = {
     description:
       "Join Skip's thriving tech community. Gain cutting-edge tech skills, connect with industry experts, and unlock opportunities. Start your tech journey today! #TechEducation #POCsInTech",
   },
+  site_name: "https://www.project-skip.org"
 };
 
 export default async function RootLayout({
@@ -47,35 +49,27 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <Head>
+        {/* General meta tags */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta name="image" content={metadata.image} />
 
-        {/* Open Graph / Facebook */}
+        {/* Open Graph / Facebook meta tags */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={metadata.site_name} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
-        <meta
-          property="og:description"
-          content={metadata.facebook.description}
-        />
-        {/* ... Add og:image if you have it in metadata ... */}
-
-        {/* Twitter */}
-        <meta property="twitter:card" content={metadata.twitter.card} />
-        <meta property="twitter:title" content={metadata.twitter.title} />
-        <meta
-          property="twitter:description"
-          content={metadata.twitter.description}
-        />
-        <meta property="twitter:creator" content={metadata.twitter.creator} />
-        {/* ... Add twitter:image if you have it in metadata ... */}
-
-        {/* Theme Color (for browsers that support it) */}
-        <meta name="theme-color" content={metadata.themeColor} />
+        {/* Twitter meta tags */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={metadata.site_name} />
+        <meta property="twitter:title" content={metadata.title} />
+        <meta property="twitter:description" content={metadata.description} />
+        <meta property="twitter:image" content={metadata.image} />
+        <meta property="twitter:creator" content="Project_Skip" />
       </Head>
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
