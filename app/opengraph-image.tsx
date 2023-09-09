@@ -19,17 +19,17 @@ export default async function OG() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "white",
-          backgroundImage:
-            "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)",
+          justifyContent: "flex-end", // Change this to position the text at the bottom
+          padding: "2rem", // Some padding for the text
+          backgroundImage: `
+      linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%),
+      url('https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png')
+    `, // Set the image as the background
+          backgroundSize: "cover", // Cover the entire container with the image
+          backgroundPosition: "center", // Center the image
+          backgroundRepeat: "no-repeat", // Do not repeat the image
         }}
       >
-        <img
-          src="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
-          alt="Precedent Logo"
-          tw="w-20 h-20 mb-4 opacity-95"
-        />
         <h1
           style={{
             fontSize: "100px",
@@ -46,6 +46,7 @@ export default async function OG() {
         </h1>
       </div>
     ),
+
     {
       width: 1200,
       height: 630,
