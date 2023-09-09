@@ -88,9 +88,9 @@ const toggleDropdown = (index: number | null = null) => {
           <div className="flex items-center">
             <Link href="/">
               <Image
-                src="/Main_LOGO_1.png"
+                src="/Website_Simple_Logo_1.png"
                 alt="Project Skip logo"
-                width={100}
+                width={70}
                 height={75}
                 className="mr-2rounded-sm"
               />
@@ -116,13 +116,13 @@ const toggleDropdown = (index: number | null = null) => {
             ) : (
               <>
                 <button
-                  className="rounded bg-blue-500 px-4 py-2 text-white"
+                  className=" rounded px-4 py-2 text-black  underline"
                   onClick={() => setShowSignInModal(true)}
                 >
                   Login
                 </button>
                 <button
-                  className="rounded bg-slate-950 px-4 py-2 text-white"
+                  className="bg-gradient-purple rounded px-4 py-2 text-white"
                   onClick={() => setShowSignInModal(true)}
                 >
                   Sign Up
