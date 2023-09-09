@@ -56,7 +56,7 @@ export default async function RootLayout({
 
         {/* Open Graph / Facebook meta tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={metadata.site_name} />
+        {/* <meta property="og:url" content={metadata.site_name} /> */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.image} />
