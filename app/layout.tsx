@@ -10,7 +10,8 @@ import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
 export const metadata = {
-  image: "https://www.project-skip.org/opengraph-image?b68401e0a41fcaf5",
+  image:
+    "https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
