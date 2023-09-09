@@ -26,7 +26,7 @@ export default async function OG() {
         }}
       >
         <img
-          src={new URL("https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png", import.meta.url).toString()}
+          src="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
           alt="Precedent Logo"
           tw="w-20 h-20 mb-4 opacity-95"
         />
