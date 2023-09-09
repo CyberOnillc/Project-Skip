@@ -1,4 +1,3 @@
-// use client
 import { FC } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -32,7 +31,8 @@ const DropdownMenu: FC<DropdownProps> = ({ menuData, isOpen, onToggle }) => {
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            {menuData.map((item, index) => (
+            {/* Slice the array from the second item onward */}
+            {menuData.slice(1).map((item, index) => (
               <a
                 key={index}
                 href={item.MenuLinkURL}
