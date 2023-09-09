@@ -9,8 +9,7 @@ import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
 export const metadata = {
-  image:
-    "https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png",
+  image: "https://placehold.co/600x400",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
@@ -52,11 +51,12 @@ export default async function RootLayout({
         <meta name="description" content={metadata.description} />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content={metadata.facebook.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
 
         <meta
           property="og:description"
