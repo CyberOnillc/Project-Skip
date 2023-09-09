@@ -7,7 +7,7 @@ import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
 import { ShoppingCart, User, Search } from "lucide-react";
 import DropdownMenu from "../shared/dropdown";
-
+import Image from "next/image";
 interface NavBarProps {
   session: Session | null;
 }
@@ -87,10 +87,12 @@ const toggleDropdown = (index: number | null = null) => {
         <div className="mx-auto flex h-16 w-full max-w-screen-xl items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <img
-                src="/logo.png"
+              <Image
+                src="/Main_LOGO_1.png"
                 alt="Project Skip logo"
-                className="mr-2 h-8 w-8 rounded-sm"
+                width={100}
+                height={75}
+                className="mr-2rounded-sm"
               />
             </Link>
             <span>Project Skip</span>
