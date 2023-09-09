@@ -22,7 +22,7 @@ export default async function OG() {
           justifyContent: "space-between", // Distributes space between the image and the text
           padding: "2rem",
           backgroundImage:
-            "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)",
+            "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #966ce4 75%)",
         }}
       >
         {/* Image Container */}
@@ -38,7 +38,7 @@ export default async function OG() {
           <img
             src="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
             alt="Precedent Logo"
-            tw="w-500 h-500 mb-4 opacity-95"
+            tw="w-200 h-200 mb-4 opacity-95"
           />
         </div>
 
