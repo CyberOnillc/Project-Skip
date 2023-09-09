@@ -9,6 +9,8 @@ import { ShoppingCart, User, Search } from "lucide-react";
 import DropdownMenu from "../shared/dropdown";
 import Image from "next/image";
 import Sidebar from "../shared/sidebar";
+import { Menu } from "lucide-react";
+
 interface NavBarProps {
   session: Session | null;
 }
@@ -144,7 +146,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {/* Hamburger menu icon for mobile */}
           <div className="flex items-center md:hidden">
             <button onClick={() => setIsSideBarOpen(true)}>
-              {/* Simple Hamburger Icon */}≡
+              <Menu color="#000" size={24} />
             </button>
           </div>
 
@@ -152,7 +154,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {isSideBarOpen && (
             <Sidebar isOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen}>
               <div className=" left-0 top-full mt-2 flex w-full flex-col space-y-4 rounded bg-white text-center shadow-lg md:hidden">
-                <div className="flex flex-col items-center space-y-4 mt-10 mb-5">
+                <div className="mb-5 mt-10 flex flex-col items-center space-y-4">
                   {menuItemsArray.map((menuItems, index) => (
                     <DropdownMenu
                       key={index}
