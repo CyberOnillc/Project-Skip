@@ -1,4 +1,5 @@
 import "./globals.css";
+//eslint-disable-next-line
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import { sfPro, inter } from "./fonts";
