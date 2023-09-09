@@ -152,7 +152,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {isSideBarOpen && (
             <Sidebar isOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen}>
               <div className=" left-0 top-full mt-2 flex w-full flex-col space-y-4 rounded bg-white text-center shadow-lg md:hidden">
-                <div className="flex flex-col items-center space-y-4">
+                <div className="flex flex-col items-center space-y-4 mt-10 mb-5">
                   {menuItemsArray.map((menuItems, index) => (
                     <DropdownMenu
                       key={index}

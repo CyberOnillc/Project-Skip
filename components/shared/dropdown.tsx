@@ -1,5 +1,4 @@
 // use client
-
 import { FC } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -13,20 +12,20 @@ interface DropdownProps {
 }
 
 const DropdownMenu: FC<DropdownProps> = ({ menuData, isOpen, onToggle }) => {
-  // #```
-  // # Use the MenuLinkName of the first item as the button text
-  // #```
   const firstItemName =
     menuData.length > 0 ? menuData[0].MenuLinkName : "Dropdown";
 
   return (
-    <div className="relative inline-block text-left">
-      <button onClick={onToggle} className="flex items-center space-x-2">
+    <div className="relative w-full text-left md:inline-block">
+      <button
+        onClick={onToggle}
+        className="flex w-full items-center justify-between rounded bg-gray-100 p-2 md:space-x-2 md:rounded-none md:bg-transparent"
+      >
         <span>{firstItemName}</span>
         <ChevronDown color="#2AAA94" size={16} />
       </button>
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+        <div className="mt-2 w-full rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 md:absolute md:right-0 md:w-56">
           <div
             className="py-1"
             role="menu"
@@ -37,7 +36,7 @@ const DropdownMenu: FC<DropdownProps> = ({ menuData, isOpen, onToggle }) => {
               <a
                 key={index}
                 href={item.MenuLinkURL}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                 role="menuitem"
               >
                 {item.MenuLinkName}

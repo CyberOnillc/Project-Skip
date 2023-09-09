@@ -21,7 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, isOpen,setIsSideBarOpen }) 
       >
         <div className="relative h-full">
           <button
-            className="absolute right-4 top-4 z-10"
+            className="absolute right-4 top-4 z-10 "
             onClick={() => setIsSideBarOpen(false)}
           >
             ×
