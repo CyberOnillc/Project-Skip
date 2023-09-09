@@ -7,7 +7,9 @@ import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
+import Head from "next/head";
 export const metadata = {
+image:"/Main_LOGO_1.png",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
@@ -44,13 +46,37 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content={metadata.facebook.title} />
+        <meta
+          property="og:description"
+          content={metadata.facebook.description}
+        />
+        {/* ... Add og:image if you have it in metadata ... */}
+
+        {/* Twitter */}
+        <meta property="twitter:card" content={metadata.twitter.card} />
+        <meta property="twitter:title" content={metadata.twitter.title} />
+        <meta
+          property="twitter:description"
+          content={metadata.twitter.description}
+        />
+        <meta property="twitter:creator" content={metadata.twitter.creator} />
+        {/* ... Add twitter:image if you have it in metadata ... */}
+
+        {/* Theme Color (for browsers that support it) */}
+        <meta name="theme-color" content={metadata.themeColor} />
+      </Head>
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
         <Suspense fallback="...">
           {/* @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-       
 
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
