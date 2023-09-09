@@ -53,14 +53,20 @@ export default async function RootLayout({
         {/* General meta tags */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <meta name="image" content={metadata.image} />
+        <meta
+          name="image"
+          content="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
+        />
 
         {/* Open Graph / Facebook meta tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={metadata.site_name} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content={metadata.image} />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -69,7 +75,10 @@ export default async function RootLayout({
         <meta property="twitter:url" content={metadata.site_name} />
         <meta property="twitter:title" content={metadata.title} />
         <meta property="twitter:description" content={metadata.description} />
-        <meta property="twitter:image" content={metadata.image} />
+        <meta
+          property="twitter:image"
+          content="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
+        />
         <meta property="twitter:creator" content="Project_Skip" />
       </Head>
       <body className={cx(sfPro.variable, inter.variable)}>
