@@ -10,7 +10,7 @@ import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
 export const metadata = {
-  image: "https://placehold.co/600x400",
+  image: "https://placehold.co/1200x630",
   title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
