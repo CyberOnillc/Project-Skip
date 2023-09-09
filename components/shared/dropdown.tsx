@@ -15,7 +15,7 @@ const DropdownMenu: FC<DropdownProps> = ({ menuData, isOpen, onToggle }) => {
     menuData.length > 0 ? menuData[0].MenuLinkName : "Dropdown";
 
   return (
-    <div className="relative w-full text-left md:inline-block">
+    <div className="relative w-full lg:text-left md:inline-block">
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between rounded bg-gray-100 p-2 md:space-x-2 md:rounded-none md:bg-transparent"
@@ -36,7 +36,7 @@ const DropdownMenu: FC<DropdownProps> = ({ menuData, isOpen, onToggle }) => {
               <a
                 key={index}
                 href={item.MenuLinkURL}
-                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 sm:text-center"
                 role="menuitem"
               >
                 {item.MenuLinkName}
