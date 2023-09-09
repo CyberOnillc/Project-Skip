@@ -8,9 +8,9 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 import ComingSoon from "@/components/layout/comingSoon";
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "Skip - Jumpstarting Minorities into Tech Careers",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+    "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
   twitter: {
     card: "summary_large_image",
     title: "Precedent - Building blocks for your Next.js project",
@@ -18,8 +18,23 @@ export const metadata = {
       "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
     creator: "@steventey",
   },
-  metadataBase: new URL("https://precedent.dev"),
+  metadataBase: new URL("https://www.project-skip.org"),
   themeColor: "#FFF",
+  linkedin: {
+    title: "Empowering POCs in Tech | Join Skip's Tech Community",
+    description:
+      "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
+  },
+  facebook: {
+    title: "Join Skip's Tech Community | Empowering POCs in Tech",
+    description:
+      "Discover Skip - the platform empowering POCs in the tech industry. Gain industry-ready skills, connect with experts, and unlock new opportunities. Join us today and bridge the tech knowledge gap. #TechEducation #POCsInTech",
+  },
+  instagram: {
+    title: "Unlock Your Tech Potential with Skip",
+    description:
+      "Join Skip's thriving tech community. Gain cutting-edge tech skills, connect with industry experts, and unlock opportunities. Start your tech journey today! #TechEducation #POCsInTech",
+  },
 };
 
 export default async function RootLayout({
