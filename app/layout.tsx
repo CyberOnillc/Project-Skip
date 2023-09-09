@@ -22,7 +22,9 @@ export const metadata = {
       "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
     creator: "@steventey",
   },
-  metadataBase: new URL("https://www.project-skip.org"),
+  metadataBase: new URL(
+    "https://project-skip.vercel.app",
+  ),
   themeColor: "#FFF",
   linkedin: {
     title: "Empowering POCs in Tech | Join Skip's Tech Community",
