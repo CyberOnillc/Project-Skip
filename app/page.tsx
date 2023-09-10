@@ -1,14 +1,8 @@
-import Card from "@/components/home/card";
-import Balancer from "react-wrap-balancer";
-import { DEPLOY_URL } from "@/lib/constants";
-import { Github, Twitter } from "@/components/shared/icons";
 import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
-import Image from "next/image";
-import { nFormatter } from "@/lib/utils";
 import ComingSoon from "@/components/layout/comingSoon";
+import { DEPLOY_URL } from "@/lib/constants";
+import Image from "next/image";
 export default async function Home() {
- 
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
@@ -18,7 +12,7 @@ export default async function Home() {
           ctaLink="https://lmgfwsubawc.typeform.com/to/CQy3URCB"
         />
         {/* <a
-          href="https://twitter.com/steventey/status/1613928948915920896"
+          href="https://twitter.com/project-skip/status/1613928948915920896"
           target="_blank"
           rel="noreferrer"
           className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
@@ -71,7 +65,7 @@ export default async function Home() {
           </a>
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-            href="https://github.com/steven-tey/precedent"
+            href="https://github.com/project-skip-tey/precedent"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -120,7 +114,7 @@ const features = [
   {
     title: "One-click Deploy",
     description:
-      "Jumpstart your next project by deploying Precedent to [Vercel](https://vercel.com/) in one click.",
+      "Jumpstart your next project by deploying Project Skipto [Vercel](https://vercel.com/) in one click.",
     demo: (
       <a href={DEPLOY_URL}>
         <Image
@@ -136,7 +130,7 @@ const features = [
   {
     title: "Built-in Auth + Database",
     description:
-      "Precedent comes with authentication and database via [Auth.js](https://authjs.dev/) + [Prisma](https://prisma.io/)",
+      "Project Skipcomes with authentication and database via [Auth.js](https://authjs.dev/) + [Prisma](https://prisma.io/)",
     demo: (
       <div className="flex items-center justify-center space-x-20">
         <Image alt="Auth.js logo" src="/authjs.webp" width={50} height={50} />
@@ -147,7 +141,7 @@ const features = [
   {
     title: "Hooks, utilities, and more",
     description:
-      "Precedent offers a collection of hooks, utilities, and `@vercel/og`",
+      "Project Skipoffers a collection of hooks, utilities, and `@vercel/og`",
     demo: (
       <div className="grid grid-flow-col grid-rows-3 gap-10 p-10">
         <span className="font-mono font-semibold">useIntersectionObserver</span>

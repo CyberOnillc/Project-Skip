@@ -1,14 +1,13 @@
 import "./globals.css";
 
 //eslint-disable-next-line
+import Footer from "@/components/layout/footer";
+import Nav from "@/components/layout/nav";
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
-import { sfPro, inter } from "./fonts";
-import Nav from "@/components/layout/nav";
-import Footer from "@/components/layout/footer";
-import { Suspense } from "react";
-import ComingSoon from "@/components/layout/comingSoon";
 import Head from "next/head";
+import { Suspense } from "react";
+import { inter, sfPro } from "./fonts";
 export const metadata = {
   image:
     "https://res.cloudinary.com/djao481zq/image/upload//c_thumb,w_1200,h_630,g_auto/v1694298818/Main_LOGO_1_yabyi6.png",
@@ -17,14 +16,12 @@ export const metadata = {
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
   twitter: {
     card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
+    title: "Skip - Jumpstarting Minorities into Tech Careers",
     description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
+      "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
+    creator: "@project-skip",
   },
-  metadataBase: new URL(
-    "https://project-skip.vercel.app",
-  ),
+  metadataBase: new URL("https://project-skip.vercel.app"),
   themeColor: "#FFF",
   linkedin: {
     title: "Empowering POCs in Tech | Join Skip's Tech Community",

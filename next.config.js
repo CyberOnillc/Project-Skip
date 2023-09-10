@@ -3,17 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      "lh3.googleusercontent.com",
-      "vercel.com",
-      "https://res.cloudinary.com",
-    ],
+    domains: ["lh3.googleusercontent.com", "vercel.com","https://res.cloudinary.com"],
   },
   async redirects() {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/precedent",
+        destination: "https://github.com/techwithty",
         permanent: false,
       },
     ];

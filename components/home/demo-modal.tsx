@@ -1,12 +1,12 @@
 import Modal from "@/components/shared/modal";
+import Image from "next/image";
 import {
-  useState,
   Dispatch,
   SetStateAction,
   useCallback,
   useMemo,
+  useState,
 } from "react";
-import Image from "next/image";
 
 const DemoModal = ({
   showDemoModal,
@@ -22,7 +22,7 @@ const DemoModal = ({
           <a href="https://precedent.dev">
             <Image
               src="/logo.png"
-              alt="Precedent Logo"
+              alt="Project SkipLogo"
               className="h-10 w-10 rounded-full"
               width={20}
               height={20}
@@ -30,7 +30,7 @@ const DemoModal = ({
           </a>
           <h3 className="font-display text-2xl font-bold">Precedent</h3>
           <p className="text-sm text-gray-500">
-            Precedent is an opinionated collection of components, hooks, and
+            Project Skipis an opinionated collection of components, hooks, and
             utilities for your Next.js project.
           </p>
         </div>

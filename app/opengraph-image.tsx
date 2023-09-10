@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/server";
 
 export const runtime = "edge";
-export const alt = "Precedent - Building blocks for your Next.js project";
+export const alt = "Skip - Jumpstarting Minorities into Tech Careers";
 export const contentType = "image/png";
 
 export default async function OG() {
@@ -37,7 +37,7 @@ export default async function OG() {
         >
           <img
             src="https://res.cloudinary.com/djao481zq/image/upload/v1694298818/Main_LOGO_1_yabyi6.png"
-            alt="Precedent Logo"
+            alt="Project Skip Vision"
             tw="w-200 h-200 mb-4 opacity-95"
           />
         </div>
