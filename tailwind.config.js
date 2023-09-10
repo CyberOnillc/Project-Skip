@@ -66,5 +66,17 @@ module.exports = {
       addVariant("radix-side-top", '&[data-side="top"]');
       addVariant("radix-side-bottom", '&[data-side="bottom"]');
     }),
+    plugin(function ({ addComponents }) {
+      addComponents({
+        ".mobile-padding": {
+          padding: "1rem", // or whatever value you want
+          "@screen sm": {
+            padding: "0", // resets the padding for screen sizes >= 640px
+          },
+        },
+      });
+    }),
   ],
+
+  
 };
