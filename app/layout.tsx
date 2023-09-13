@@ -11,12 +11,12 @@ import { inter, sfPro } from "./fonts";
 export const metadata = {
   image:
     "https://res.cloudinary.com/djao481zq/image/upload//c_thumb,w_1200,h_630,g_auto/v1694298818/Main_LOGO_1_yabyi6.png",
-  title: "Skip - Jumpstarting Minorities into Tech Careers",
+  title: "Project Skip - Jumpstarting Minorities into Tech Careers",
   description:
     "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
   twitter: {
     card: "summary_large_image",
-    title: "Skip - Jumpstarting Minorities into Tech Careers",
+    title: "Project Skip - Jumpstarting Minorities into Tech Careers",
     description:
       "Unlock your tech potential with Skip - a comprehensive online platform offering courses, certifications, and networking opportunities. Join our thriving community and bridge the tech knowledge gap. #TechEducation #POCsInTech",
     creator: "@project-skip",
