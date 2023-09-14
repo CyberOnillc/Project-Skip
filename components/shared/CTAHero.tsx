@@ -7,7 +7,6 @@ type ComingSoonPageProps = {
   image: string;
   title: string;
   subtitle: string;
-  buttonAction: () => void;
 };
 
 const Container = styled.div`
@@ -16,7 +15,7 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-  background-color: white;
+ 
   padding-bottom: 14rem;
   
   @media (min-width: 640px) {
@@ -53,7 +52,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
   image,
   title,
   subtitle,
-  buttonAction,
+ 
 }) => {
   return (
     <Container>
@@ -110,8 +109,8 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                     <div className="mt-3 sm:ml-3 sm:mt-0">
                       <button
                         type="submit"
-                        className="block w-full rounded-md bg-pink-500 px-4 py-3 font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-                        onClick={buttonAction}
+                        className="block w-full rounded-md bg-cyan-500 px-4 py-3 font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
+                        onClick={() => console.log('run')}
                       >
                         Join Waitlist
                       </button>

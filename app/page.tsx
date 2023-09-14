@@ -13,11 +13,8 @@ export default async function Home() {
       <div className="z-10 w-full  px-5 xl:px-0">
         <ComingSoonPage
           image="https://user-images.githubusercontent.com/1884712/202186141-9f8a93e1-7743-459a-bc95-b1d826931624.png"
-          title={
-            "Dees"
-          }
-          subtitle="Our Website will launch soon. Join the waitlist to try the beta before it's publicly available."
-        
+          title={"Join Our Tech Community Today!"}
+          subtitle="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."
         />
 
         {/* <a
