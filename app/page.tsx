@@ -1,16 +1,25 @@
 import WebVitals from "@/components/home/web-vitals";
 import ComingSoon from "@/components/layout/comingSoon";
 import { DEPLOY_URL } from "@/lib/constants";
+import ComingSoonPage from "@/components/shared/CTAHero";
 import Image from "next/image";
 export default async function Home() {
+
+  const handleButtonClick = () => {
+    console.log("Button clicked!");
+  };
   return (
     <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <ComingSoon
-          title="Join Our Tech Community Today!"
-          description="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."
-          ctaLink="https://lmgfwsubawc.typeform.com/to/CQy3URCB"
+      <div className="z-10 w-full  px-5 xl:px-0">
+        <ComingSoonPage
+          image="https://user-images.githubusercontent.com/1884712/202186141-9f8a93e1-7743-459a-bc95-b1d826931624.png"
+          title={
+            "Dees"
+          }
+          subtitle="Our Website will launch soon. Join the waitlist to try the beta before it's publicly available."
+        
         />
+
         {/* <a
           href="https://twitter.com/project-skip/status/1613928948915920896"
           target="_blank"
