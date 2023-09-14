@@ -83,7 +83,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
  
 }) => {
   return (
-    <Container>
+    <Container className="mt-20">
       <InnerContainer>
         <div className="mx-auto  lg:px-8">
           <Grid>
