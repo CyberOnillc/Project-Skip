@@ -14,11 +14,11 @@ export type CourseCardProps = {
 }
 const CourseCard = ({ course }: CourseCardProps) => {
     return (
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full">
             <img
                 src={course.image}
                 alt={course.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-1/2 object-cover"
             />
             <div className="p-4">
             <div className="flex justify-between">

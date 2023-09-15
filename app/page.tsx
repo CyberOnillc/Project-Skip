@@ -24,11 +24,18 @@ export default async function Home() {
           </div>
         </section>
         <section className="w-full h-screen py-10">
-          <CardCarousel>
-            {courseCards.map((courseCard) => {
-              return <CourseCard course={courseCard}></CourseCard>
-            })}
-          </CardCarousel>
+          <div className="h-1/6 px-24">
+            <div className="w-full h-1/2 text-center text-4xl font-bold">Upcoming <span className="text-green-300">Courses</span></div>
+            <div className="w-1/2 h-1/2 text-center text-lg mx-auto py-2 px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</div>
+          </div>
+
+          <div className="h-5/6 py-10 px-24">
+            <CardCarousel>
+              {courseCards.map((courseCard) => {
+                return <CourseCard course={courseCard}></CourseCard>
+              })}
+            </CardCarousel>
+          </div>
         </section>
         <ComingSoon
           title="Join Our Tech Community Today!"
