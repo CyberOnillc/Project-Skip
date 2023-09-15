@@ -1,11 +1,35 @@
+import CardCarousel from "@/components/CardCarousel";
+import CourseCard from "@/components/CourseCard";
+import Hero from "@/components/home/Hero";
 import WebVitals from "@/components/home/web-vitals";
 import ComingSoon from "@/components/layout/comingSoon";
 import { DEPLOY_URL } from "@/lib/constants";
+import { courseCards } from "data/sampleData";
 import Image from "next/image";
 export default async function Home() {
   return (
     <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
+      <div className="z-10 w-full  px-5 xl:px-0 font-">
+        <section className="w-full h-screen">
+          <Hero></Hero>
+        </section>
+        <section className="w-full h-screen py-10">
+          <div className="flex px-24 items-center">
+            <Image className="w-1/2 p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
+            <div className="w-1/2 align-middle py-10">
+              <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
+              <p>Founded with a vision to uplift the POC community in technology, **Skip** is more than just a learning platform. With our team of expert instructors and partnerships with prestigious educational institutions, we aim to create a ripple effect of positive change in the tech industry.</p>
+              <button className="text-white h-10 bg-gradient-button px-5 my-5 rounded-lg">Watch Video</button>
+            </div>
+          </div>
+        </section>
+        <section className="w-full h-screen py-10">
+          <CardCarousel>
+            {courseCards.map((courseCard) => {
+              return <CourseCard course={courseCard}></CourseCard>
+            })}
+          </CardCarousel>
+        </section>
         <ComingSoon
           title="Join Our Tech Community Today!"
           description="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."

@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Inter, Rowdies, Saira } from "next/font/google";
 
 export const sfPro = localFont({
   src: "./SF-Pro-Display-Medium.otf",
@@ -10,3 +10,14 @@ export const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+
+export const saira = Saira({
+  variable: "--font-saira",
+  subsets: ["latin"],
+})
+
+export const rowdies = Rowdies({
+  variable: "--font-rowdies",
+  subsets: ["latin"],
+  weight: "400"
+})
