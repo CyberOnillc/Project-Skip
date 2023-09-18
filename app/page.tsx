@@ -11,6 +11,7 @@ export default async function Home() {
   return (
     <>
       <div className="z-10 w-full  px-5 xl:px-0">
+        {/* //Hydration issue coming from this */}
         <ComingSoonPage
           image="/Vision.png"
           title={"Project Skip"}
