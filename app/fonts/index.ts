@@ -12,12 +12,13 @@ export const inter = Inter({
 });
 
 export const saira = Saira({
-  variable: "--font-saira",
+  variable: '--font-saira',
   subsets: ["latin"],
+  weight: ['300', '400', '500', '700', '900']
 })
 
 export const rowdies = Rowdies({
-  variable: "--font-rowdies",
+  variable: '--font-rowdies',
   subsets: ["latin"],
-  weight: "400"
+  weight: ['300', '400', '700']
 })

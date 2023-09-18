@@ -6,17 +6,19 @@ import { JsxElement } from "typescript"
 
 function CardCarousel({ cards, children }: React.HTMLAttributes<HTMLDivElement> & { cards?: React.ReactNode[] }) {
 
-    const totalCards = cards?.length || Children.count(children);
     const list = cards ? cards : children ? Children.toArray(children) : []
+    const totalPages = list.length % 3 === 0 ? list.length / 3 : Math.floor(list.length / 3) + 1;
+
+    console.log(totalPages)
     const [currentPage, setCurrentPage] = useState(0);
     const swipehandlers = useSwipe({ onSwipedLeft: prevSlide, onSwipedRight: nextSlide })
 
     function prevSlide() {
-        setCurrentPage(prev => prev == 0 ? 2 : prev - 1)
+        setCurrentPage(prev => prev == 0 ? totalPages - 1 : prev - 1)
 
     }
     function nextSlide() {
-        setCurrentPage(prev => prev == 2 ? 0 : prev + 1)
+        setCurrentPage(prev => prev == totalPages - 1 ? 0 : prev + 1)
     }
     return (
         <>
@@ -30,7 +32,7 @@ function CardCarousel({ cards, children }: React.HTMLAttributes<HTMLDivElement> 
                     <button onClick={prevSlide} className="text-black py-2 px-4 border-none cursor-pointer">
                         <ChevronLeft className=''></ChevronLeft>
                     </button>
-                    {[0, 1, 2].map((value, index) => {
+                    {(new Array(totalPages).fill(1)).map((value, index) => {
                         return <div key={index} className={`${index === currentPage ? 'w-20 bg-blue-800' : 'w-7 bg-gray-400'}  h-2 rounded-full`}></div>
                     })}
                     <button onClick={nextSlide} className="text-black py-2 px-4 border-none cursor-pointer">

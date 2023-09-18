@@ -1,11 +1,16 @@
 import CardCarousel from "@/components/CardCarousel";
+import CategoryCard from "@/components/CategoryCard";
+import ContactForm from "@/components/ContactForm";
 import CourseCard from "@/components/CourseCard";
 import Hero from "@/components/home/Hero";
 import WebVitals from "@/components/home/web-vitals";
 import ComingSoon from "@/components/layout/comingSoon";
 import { DEPLOY_URL } from "@/lib/constants";
-import { courseCards } from "data/sampleData";
+import { categoryCards, courseCards } from "data/sampleData";
 import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Locate, LocateIcon, Mail, MapPin, Phone, Pin, Twitter, Youtube } from "lucide-react";
+import VerticalSeparator from "@/components/shared/verticalSeparator";
+
 export default async function Home() {
   return (
     <>
@@ -37,93 +42,82 @@ export default async function Home() {
             </CardCarousel>
           </div>
         </section>
+
+        <section className="w-full h-fit py-10 font-rowdies">
+          <div className="relative  bg-hero bg-cover bg-no-repeat flex flex-col justify-center text-white ">
+            <div className="absolute  bg-gradient-to-r from-[#084FC7E5] to-[#7F56D9E5] w-full h-full"></div>
+            <div className="py-10 z-10 h-full">
+              <h1 className="font-bold text-4xl w-full text-center">Why <span className="text-green-300">learn</span> with our courses?</h1>
+              <p className="font-saira py-10 w-full text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</p>
+
+              <div className="flex  px-5 font-saira h-3/4">
+                <div className="p-2 flex-1">
+                  <div className="p-5 h-1/3  w-full">
+                    <Image className="h-full w-full p-4" src={'/learn.svg'} alt="icon" height={20} width={20}></Image>
+                  </div>
+                  <h3 className="text-lg font-semibold text-center">0.1 Learn</h3>
+                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                </div>
+                <VerticalSeparator></VerticalSeparator>
+                <div className="p-2 flex-1">
+                <div className="p-5 h-1/3 w-full">
+                    <Image className="h-full w-full p-4" src={'/graduate.svg'} alt="icon" height={20} width={20}></Image>
+                  </div>
+                  <h3 className="text-lg font-semibold text-center">0.1 Graduate</h3>
+                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                </div>
+                <div className="p-2 flex-1">
+                <div className="p-5 h-1/3 w-full">
+                    <Image className="h-full w-full p-10" src={'/work.svg'} alt="icon" height={20} width={20}></Image>
+                  </div>
+                  <h3 className="text-lg font-semibold text-center">0.3 Work</h3>
+                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-1/2 py-10">
+            <div className="w-full text-center">
+              <h1 className="font-bold text-4xl">Top <span className="text-green-300">Categories</span></h1>
+              <h3 className="m-5">12,000+ unique online course list designs</h3>
+            </div>
+            <div className="flex gap-4 h-3/4 justify-center px-5 ">
+              {categoryCards.map((value, index) => {
+                return <div className="flex-1">
+                  <CategoryCard {...value}></CategoryCard>
+                </div>
+              })}
+            </div>
+          </div>
+
+        </section>
+        <section className="py-5">
+          <div className=" bg-[#4C2FBD] flex justify-center mx-[5%] rounded-lg">
+            <div className="p-10 w-1/2 leading-relaxed pl-20">
+              <h1 className="font-bold text-5xl text-white leading-relaxed">Let's discuss </h1>
+              <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
+              <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
+              <div className="text-white">
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><Phone className='ml-2'></Phone>+123 456 789</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
+              </div>
+              <div className="flex gap-3 mt-4">
+                <Twitter className="" color="white"></Twitter>
+                <Facebook className="" color="white"></Facebook>
+                <Instagram className="" color="white"></Instagram>
+              </div>
+            </div>
+            <div className="p-10 w-1/2"><ContactForm></ContactForm></div>
+
+          </div>
+        </section>
         <ComingSoon
           title="Join Our Tech Community Today!"
           description="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."
           ctaLink="https://lmgfwsubawc.typeform.com/to/CQy3URCB"
         />
-        {/* <a
-          href="https://twitter.com/project-skip/status/1613928948915920896"
-          target="_blank"
-          rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
-        >
-          <Twitter className="h-5 w-5 text-[#1d9bf0]" />
-          <p className="text-sm font-semibold text-[#1d9bf0]">
-            Introducing Precedent
-          </p>
-        </a>
-        <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
-          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-        >
-          <Balancer>Building blocks for your Next project</Balancer>
-        </h1>
-        <p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
-          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-        >
-          <Balancer>
-            An opinionated collection of components, hooks, and utilities for
-            your Next.js project.
-          </Balancer>
-        </p>
-        <div
-          className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
-          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-        >
-          <a
-            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
-            href={DEPLOY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              className="h-4 w-4 group-hover:text-black"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 4L20 20H4L12 4Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <p>Deploy to Vercel</p>
-          </a>
-          <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-            href="https://github.com/project-skip-tey/precedent"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github />
-            <p>
-              <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
-            </p>
-          </a>
-        </div>
-      </div>
-      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
-        {features.map(({ title, description, demo, large }) => (
-          <Card
-            key={title}
-            title={title}
-            description={description}
-            demo={
-              title === "Beautiful, reusable components" ? (
-                <ComponentGrid />
-              ) : (
-                demo
-              )
-            }
-            large={large}
-          />
-        ))} */}
+
       </div>
     </>
   );

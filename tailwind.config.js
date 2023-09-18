@@ -26,8 +26,8 @@ module.exports = {
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
-        rowdies: ["var(--font-rowdies)"],
-        saira: ["var(--font-saira)"]
+        rowdies: ["var(--font-rowdies)", "system-ui", "sans-serif"],
+        saira: ["var(--font-saira)", "system-ui", "sans-serif"]
 
       },
       backgroundImage: {
