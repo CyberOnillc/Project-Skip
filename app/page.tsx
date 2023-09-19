@@ -50,7 +50,7 @@ export default async function Home() {
               <h1 className="font-bold text-4xl w-full text-center">Why <span className="text-green-300">learn</span> with our courses?</h1>
               <p className="font-saira py-10 w-full text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</p>
 
-              <div className="flex  px-5 font-saira h-3/4">
+              <div className="flex  px-5 font-saira h-3/4 ">
                 <div className="p-2 flex-1">
                   <div className="p-5 h-1/3  w-full">
                     <Image className="h-full w-full p-4" src={'/learn.svg'} alt="icon" height={20} width={20}></Image>
@@ -60,14 +60,16 @@ export default async function Home() {
                 </div>
                 <VerticalSeparator></VerticalSeparator>
                 <div className="p-2 flex-1">
-                <div className="p-5 h-1/3 w-full">
+                  <div className="p-5 h-1/3 w-full">
                     <Image className="h-full w-full p-4" src={'/graduate.svg'} alt="icon" height={20} width={20}></Image>
                   </div>
                   <h3 className="text-lg font-semibold text-center">0.1 Graduate</h3>
                   <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
                 </div>
+                <VerticalSeparator></VerticalSeparator>
+
                 <div className="p-2 flex-1">
-                <div className="p-5 h-1/3 w-full">
+                  <div className="p-5 h-1/3 w-full">
                     <Image className="h-full w-full p-10" src={'/work.svg'} alt="icon" height={20} width={20}></Image>
                   </div>
                   <h3 className="text-lg font-semibold text-center">0.3 Work</h3>
