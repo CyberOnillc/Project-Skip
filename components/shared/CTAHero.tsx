@@ -1,5 +1,5 @@
 "use client"
-import React, { FC } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -80,10 +80,33 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
   image,
   title,
   subtitle,
- 
+
 }) => {
+
+  const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+    city: ''
+  });
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setUserData(prev => (
+
+      { ...prev, [name]: value }
+    ))
+  }
+
+  async function submit(event: FormEvent) {
+    event.preventDefault();
+    console.log(event.target);
+    let res = await fetch('/api/marketing/add', { method: 'POST', body: JSON.stringify(userData) });
+
+    if (res.status == 200) alert('Added to waitlist')
+    else alert('Error')
+  }
   return (
-    <Container className="mt-20">
+    <Container className="mt-20 ">
       <InnerContainer>
         <div className="mx-auto  lg:px-8">
           <Grid>
@@ -97,8 +120,8 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                 </p>
                 <div className="mt-10 sm:mt-12">
                   <form
-                    className="sm:mx-auto sm:max-w-xl lg:mx-0"
-                    action="https://api.web3forms.com/submit"
+                    className="sm:mx-auto sm:max-w-xl lg:mx-0 z-30"
+                    onSubmit={submit}
                   >
                     {/* Name Field */}
                     <div className="mb-4">
@@ -115,6 +138,8 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                         required
                         className="mt-2 w-full rounded-md border p-3"
                         placeholder="Enter your name"
+                        onChange={handleInput}
+
                       />
                     </div>
                     {/* Email Field */}
@@ -132,13 +157,32 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                         required
                         className="mt-2 w-full rounded-md border p-3"
                         placeholder="Enter your email"
+                        onChange={handleInput}
+
+                      />
+                    </div>
+                    <div className="mb-4">
+                      <label
+                        htmlFor="city"
+                        className="block text-sm font-medium text-gray-600"
+                      >
+                        City
+                      </label>
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        required
+                        className="mt-2 w-full rounded-md border p-3"
+                        placeholder="Enter City Name"
+                        onChange={handleInput}
+
                       />
                     </div>
                     <div className="mt-3 sm:ml-3 sm:mt-0">
                       <button
                         type="submit"
                         className="block w-full rounded-md bg-cyan-500 px-4 py-3 font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-                        onClick={() => console.log("run")}
                       >
                         Join Waitlist
                       </button>
@@ -147,7 +191,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                 </div>
               </div>
             </div>
-            <ImageDiv className="flex h-full w-full items-center justify-center lg:order-2 lg:order-2 ">
+            <ImageDiv className="flex h-full w-full items-center justify-center lg:order-2 ">
               <motion.img
                 className="mt-12 flex items-center justify-center rounded-md "
                 width={500}
@@ -158,7 +202,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                 variants={floatVariants}
                 alt="Landing"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 -z-10"></div>
             </ImageDiv>
           </Grid>
         </div>
