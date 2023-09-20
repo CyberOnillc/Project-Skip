@@ -17,7 +17,10 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                 firstName = name.split(' ')[0]
             }
             console.log(name, email, city)
-            await addToMailChimp({ city, email, firstName, lastName })
+
+           const response = await addToMailChimp({ city, email, firstName, lastName })
+            console.log(response)
+
         } catch (error) {
             console.log(error)
             return { message: (error as Error).message }

@@ -6,10 +6,12 @@ import Hero from "@/components/home/Hero";
 import WebVitals from "@/components/home/web-vitals";
 import ComingSoon from "@/components/layout/comingSoon";
 import { DEPLOY_URL } from "@/lib/constants";
-import { categoryCards, courseCards } from "data/sampleData";
+import { categoryCards, courseCards, reviews } from "data/sampleData";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Locate, LocateIcon, Mail, MapPin, Phone, Pin, Twitter, Youtube } from "lucide-react";
 import VerticalSeparator from "@/components/shared/verticalSeparator";
+import ReviewCard from "@/components/ReviewCard";
+import VideoPlayer from "@/components/home/video";
 
 export default async function Home() {
 
@@ -97,6 +99,23 @@ export default async function Home() {
           </div>
 
         </section>
+        <section className="w-full py-5">
+          <div  className=" w-full flex justify-center p-10" >
+            <div className="w-1/2">
+              <VideoPlayer src="/video.mp4"></VideoPlayer>
+            </div>
+          </div>
+          <div className="w-full text-center">
+            <h1 className="font-bold text-4xl"><span className="text-[#2AAA94]">Testimonials</span></h1>
+            <h3 className="m-5">What our student say about us</h3>
+          </div>
+          <CardCarousel>
+            {reviews.map((review, index) => {
+              return <ReviewCard {...review} key={index}></ReviewCard>
+            })}
+          </CardCarousel>
+
+        </section>
         <section className="py-5">
           <div className=" bg-[#4C2FBD] flex justify-center mx-[5%] rounded-lg">
             <div className="p-10 w-1/2 leading-relaxed pl-20">
@@ -118,6 +137,7 @@ export default async function Home() {
 
           </div>
         </section>
+
         <ComingSoon
           title="Join Our Tech Community Today!"
           description="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."

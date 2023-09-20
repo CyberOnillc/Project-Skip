@@ -1,3 +1,4 @@
+import { ReviewCardProps } from "@/components/ReviewCard"
 
 export const courseCards = [
     {
@@ -82,3 +83,23 @@ export const categoryCards = [
 
 
 ]
+
+
+export const reviews: ReviewCardProps[] = [{
+    name: 'Ronald Richards',
+    image: '/prof1.png',
+    content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+    rating: '4'
+},
+{
+    name: 'Wade Warren',
+    image: '/prof3.png',
+    content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+    rating: '4'
+},
+{
+    name: 'Jacob Jones',
+    image: '/prof2.png',
+    content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+    rating: '4'
+}]
