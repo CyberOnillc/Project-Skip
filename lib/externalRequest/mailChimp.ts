@@ -5,23 +5,27 @@ client.setConfig({
     server: `${process.env.MAILCHIMP_PREFIX}`,
 });
 
+const mailingListId = process.env.MAILCHIMP_LIST_ID
 export type AddToMarketingDTO = { firstName: string, lastName: string, email: string, city: string }
 
 
 export async function addToMailChimp({ email, firstName, lastName, city }: AddToMarketingDTO) {
     try {
-        let res = await client.lists.getListMember(`${process.env.MAILCHIMP_LIST_ID}`, email)
-
-        res = await client.lists.updateListMember(`${process.env.MAILCHIMP_LIST_ID}`, email, { merge_fields: { FNAME: firstName, LNAME: lastName, CITY: city } })
+        let res = await client.lists.getListMember(`${mailingListId}`, email)
+        res = await client.lists.updateListMember(`${mailingListId}`, email, { merge_fields: { FNAME: firstName, LNAME: lastName, CITY: city } })
 
 
     } catch (error) {
 
-        console.log(error)
-        let res = await client.lists.addListMember(`${process.env.MAILCHIMP_LIST_ID}`, { email_address: email, email_type: 'text', status: 'subscribed', merge_fields: { FNAME: firstName, LNAME: lastName, CITY: city } })
-
-    } finally {
+        let res = await client.lists.addListMember(`${mailingListId}`, { email_address: email, email_type: 'text', status: 'subscribed', merge_fields: { FNAME: firstName, LNAME: lastName, CITY: city } })
 
     }
 
+}
+export async function getCities() {
+    let res = await client.lists.getListMergeFields(`${mailingListId}`) as client.lists.MergeFieldSuccessResponse
+
+    for (const field of res.merge_fields) {
+        if (field.tag === 'CITY') return field.options.choices
+    }
 }

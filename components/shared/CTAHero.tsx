@@ -1,5 +1,5 @@
 "use client"
-import React, { FC, FormEvent, useState } from "react";
+import React, { FC, FormEvent, ReactNode, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ type ComingSoonPageProps = {
   image: string;
   title: string;
   subtitle: string;
+  form: ReactNode
 };
 
 const Container = styled.div`
@@ -80,6 +81,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
   image,
   title,
   subtitle,
+  form
 
 }) => {
 
@@ -119,75 +121,7 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
                   {subtitle}
                 </p>
                 <div className="mt-10 sm:mt-12">
-                  <form
-                    className="sm:mx-auto sm:max-w-xl lg:mx-0 z-30"
-                    onSubmit={submit}
-                  >
-                    {/* Name Field */}
-                    <div className="mb-4">
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-600"
-                      >
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="mt-2 w-full rounded-md border p-3"
-                        placeholder="Enter your name"
-                        onChange={handleInput}
-
-                      />
-                    </div>
-                    {/* Email Field */}
-                    <div className="mb-4">
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-600"
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="mt-2 w-full rounded-md border p-3"
-                        placeholder="Enter your email"
-                        onChange={handleInput}
-
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <label
-                        htmlFor="city"
-                        className="block text-sm font-medium text-gray-600"
-                      >
-                        City
-                      </label>
-                      <input
-                        type="text"
-                        id="city"
-                        name="city"
-                        required
-                        className="mt-2 w-full rounded-md border p-3"
-                        placeholder="Enter City Name"
-                        onChange={handleInput}
-
-                      />
-                    </div>
-                    <div className="mt-3 sm:ml-3 sm:mt-0">
-                      <button
-                        type="submit"
-                        className="block w-full rounded-md bg-cyan-500 px-4 py-3 font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-                      >
-                        Join Waitlist
-                      </button>
-                    </div>
-                  </form>
+                  {form}
                 </div>
               </div>
             </div>
@@ -207,7 +141,6 @@ const ComingSoonPage: FC<ComingSoonPageProps> = ({
           </Grid>
         </div>
       </InnerContainer>
-      <Footer>{/* ... rest of the footer code ... */}</Footer>
     </Container>
   );
 };

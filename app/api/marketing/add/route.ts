@@ -1,4 +1,4 @@
-import { AddToMarketingDTO, addToMailChimp } from "@/lib/externalRequest/mailChimp";
+import { AddToMarketingDTO, addToMailChimp, getCities } from "@/lib/externalRequest/mailChimp";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -18,4 +18,10 @@ export async function POST(req: NextRequest) {
     }
     await addToMailChimp({ firstName, lastName, email, city })
     return NextResponse.json({ message: "success" }, { status: 200 })
+}
+
+export async function GET(req: Request) {
+    const choices = await getCities()
+    console.log(choices)
+    return NextResponse.json({ message: "success", choices }, { status: 200 })
 }

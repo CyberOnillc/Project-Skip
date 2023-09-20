@@ -10,6 +10,9 @@ const nextConfig = {
       "user-images.githubusercontent.com",
     ],
   },
+  experimental: {
+    serverActions: true,
+  },
   async redirects() {
     return [
       {

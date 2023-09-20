@@ -3,6 +3,11 @@ import ComingSoon from "@/components/layout/comingSoon";
 import { DEPLOY_URL } from "@/lib/constants";
 import ComingSoonPage from "@/components/shared/CTAHero";
 import Image from "next/image";
+import Card from "@/components/home/card";
+import ComponentGrid from "@/components/home/component-grid";
+import { nFormatter } from "@/lib/utils";
+import { Twitter, Github } from "lucide-react";
+import Balancer from "react-wrap-balancer";
 export default async function Home() {
 
   const handleButtonClick = () => {
@@ -11,13 +16,7 @@ export default async function Home() {
   return (
     <>
       <div className="z-10 w-full  px-5 xl:px-0">
-        <ComingSoonPage
-          image="/Vision.png"
-          title={"Project Skip"}
-          subtitle="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."
-        />
-
-        {/* <a
+        <a
           href="https://twitter.com/project-skip/status/1613928948915920896"
           target="_blank"
           rel="noreferrer"
@@ -78,7 +77,7 @@ export default async function Home() {
             <Github />
             <p>
               <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
+              <span className="font-semibold">{nFormatter(4)}</span>
             </p>
           </a>
         </div>
@@ -98,7 +97,7 @@ export default async function Home() {
             }
             large={large}
           />
-        ))} */}
+        ))}
       </div>
     </>
   );
