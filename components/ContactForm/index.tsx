@@ -1,8 +1,14 @@
 'use client'
-import { PlaneIcon, Send } from "lucide-react";
+import { AlertCircle, Mail, PlaneIcon, Send } from "lucide-react";
 import React, { useState } from 'react';
+import { LoadingCircle } from "../shared/icons";
+import Balancer from "react-wrap-balancer";
 
 function ContactForm() {
+
+    const [showForm, setShowForm] = useState(true);
+    const [showThanks, setShowThanks] = useState(false);
+    const [showError, setShowError] = useState(false);
     const [selectedInterest, setSelectedInterest] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,10 +18,22 @@ function ContactForm() {
         setSelectedInterest(interest);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Here, you can handle form submission, e.g., sending data to a server.
         console.log('Form submitted:', { selectedInterest, name, email, message });
+
+        if (name && email && message) {
+            let res = await fetch(`/api/marketing/contact`, { method: "POST", body: JSON.stringify({ name, email, subject: selectedInterest, message }) })
+            setShowForm(false)
+            if (res.status === 200) {
+                setShowThanks(true)
+            }
+            else {
+                setShowError(true)
+            }
+
+        }
     };
 
     return (
@@ -88,6 +106,28 @@ function ContactForm() {
                     <span className="mx-2">Send Message</span>
                 </button>
             </form>
+
+            {!showForm && !showThanks && !showError &&
+                <>
+                    <LoadingCircle></LoadingCircle>
+                </>}
+
+            {showThanks &&
+                <>
+                    <div className="w-full flex flex-col justify-center items-center p-10 text-center">
+                        <Mail />
+                        <Balancer>Check you email</Balancer>
+                    </div>
+                </>}
+
+            {showError &&
+                <>
+                    <div className="w-full flex flex-col justify-center items-center p-10 text-center">
+                        <AlertCircle color="red" />
+                        <Balancer>An error occurred</Balancer>
+                    </div>
+                </>
+            }
         </div>
     );
 }

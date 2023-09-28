@@ -22,6 +22,5 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: Request) {
     const choices = await getCities()
-    console.log(choices)
     return NextResponse.json({ message: "success", choices }, { status: 200 })
 }
