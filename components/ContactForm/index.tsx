@@ -39,7 +39,7 @@ function ContactForm() {
     return (
         <div className="w-full h-fit mx-auto p-6 bg-neutral-300 rounded-lg shadow-lg">
 
-            <form className="h-full w-full p-6" onSubmit={handleSubmit}>
+            {showForm &&<form className="h-full w-full p-6" onSubmit={handleSubmit}>
                 <div className="mb-4 h-2/6">
                     <p className="mb-2 font-bold h-1/6">I am interested in ...</p>
                     <div className="flex justify-start flex-wrap gap-5 h-5/6">
@@ -105,7 +105,7 @@ function ContactForm() {
                     <Send color="white" className="mx-2" />
                     <span className="mx-2">Send Message</span>
                 </button>
-            </form>
+            </form>}
 
             {!showForm && !showThanks && !showError &&
                 <>

@@ -23,12 +23,12 @@ function CardCarousel({ cards, children }: React.HTMLAttributes<HTMLDivElement> 
     return (
         <>
             <div {...swipehandlers} className='flex flex-col justify-center items-center h-full w-full'>
-                <div className="flex w-full h-5/6 gap-5">
+                <div className="flex flex-col md:flex-row w-full h-full gap-5">
                     {list.slice(currentPage * 3, currentPage * 3 + 3).map((card, index) => {
-                        return <div key={index} className="h-full w-2/6 px-5">{card}</div>
+                        return <div key={index} className="w-full h-full px-5">{card}</div>
                     })}
                 </div>
-                <div className="flex  h-1/6 w-full justify-center items-center align-middle gap-5">
+                <div className="flex h-1/6 w-full justify-center items-center align-middle gap-5">
                     <button onClick={prevSlide} className="text-black py-2 px-4 border-none cursor-pointer">
                         <ChevronLeft className=''></ChevronLeft>
                     </button>

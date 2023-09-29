@@ -81,12 +81,10 @@ export default async function RootLayout({
         <meta property="twitter:creator" content="Project_Skip" />
       </Head>
       <body className={cx(sfPro.variable, inter.variable, saira.variable, rowdies.variable )}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+        <div className="fixed h-full w-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
         <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-
         <main className="justify-centersm:py-8 flex min-h-screen w-full flex-col items-center md:py-16 lg:py-24 xl:py-32">
           {children}
         </main>

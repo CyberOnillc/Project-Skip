@@ -20,12 +20,12 @@ export default async function Home() {
   };
   return (
     <>
-      <div className="z-10 w-full  px-5 xl:px-0 font-">
-        <section className="w-full h-screen">
+      <div className="container z-10 w-full  lg:px-5 xl:px-0">
+        <section className="w-full h-screen items-center">
           <Hero></Hero>
         </section>
-        <section className="w-full h-screen py-10">
-          <div className="flex px-24 items-center">
+        <section className="w-full h-screen py-10"> 
+          <div className="container flex flex-col lg:flex-row lg:px-24 items-center">
             <Image className="w-1/2 p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
             <div className="w-1/2 align-middle py-10">
               <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
@@ -34,13 +34,13 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full h-screen py-10">
-          <div className="h-1/6 px-24">
+        <section className="w-full h-fit lg:h-screen py-10">
+          <div className="container lg:h-1/6 lg:px-24">
             <div className="w-full h-1/2 text-center text-4xl font-bold">Upcoming <span className="text-green-300">Courses</span></div>
-            <div className="w-1/2 h-1/2 text-center text-lg mx-auto py-2 px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</div>
+            <div className="lg:w-1/2 h-1/2 text-center text-lg mx-auto py-2 px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</div>
           </div>
 
-          <div className="h-5/6 py-10 px-24">
+          <div className="container lg:h-5/6 py-10 lg:px-24">
             <CardCarousel>
               {courseCards.map((courseCard) => {
                 return <CourseCard course={courseCard}></CourseCard>
@@ -84,12 +84,12 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className="h-1/2 py-10">
+          <div className="w-full h-1/2 py-10">
             <div className="w-full text-center">
               <h1 className="font-bold text-4xl">Top <span className="text-green-300">Categories</span></h1>
               <h3 className="m-5">12,000+ unique online course list designs</h3>
             </div>
-            <div className="flex gap-4 h-3/4 justify-center px-5 ">
+            <div className="flex gap-4 h-3/4 lg:justify-center px-5 overflow-x-auto max-w-full">
               {categoryCards.map((value, index) => {
                 return <div className="flex-1">
                   <CategoryCard {...value}></CategoryCard>
@@ -100,8 +100,8 @@ export default async function Home() {
 
         </section>
         <section className="w-full py-5">
-          <div  className=" w-full flex justify-center p-10" >
-            <div className="w-1/2">
+          <div  className=" w-full flex justify-center p-2 lg:p-10" >
+            <div className="lg:w-1/2">
               <VideoPlayer src="/video.mp4"></VideoPlayer>
             </div>
           </div>
@@ -117,8 +117,8 @@ export default async function Home() {
 
         </section>
         <section className="py-5">
-          <div className=" bg-[#4C2FBD] flex justify-center mx-[5%] rounded-lg">
-            <div className="p-10 w-1/2 leading-relaxed pl-20">
+          <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
+            <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
               <h1 className="font-bold text-5xl text-white leading-relaxed">Let's discuss </h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
@@ -133,8 +133,7 @@ export default async function Home() {
                 <Instagram className="" color="white"></Instagram>
               </div>
             </div>
-            <div className="p-10 w-1/2"><ContactForm></ContactForm></div>
-
+            <div className="p-4 lg:p-10 lg:w-1/2"><ContactForm></ContactForm></div>
           </div>
         </section>
 

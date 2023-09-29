@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="absolute bg-gradient-to-r from-[#331DA8] to-[#865AEF] text-white  w-full text-center py-10 px-10 font-mont">
-      <div className=" grid grid-cols-4 grid-rows-1 w-full text-center py-10 px-10 font-mont mt-10">
+      <div className=" grid lg:grid-cols-4 lg:grid-rows-1 w-full text-center py-10 lg:px-10 font-mont mt-10">
         <div className="flex flex-col">
           <div className="flex gap-3 my-2">
           </div>
@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-      <div className="flex gap-0 justify-between mx-10 my-5">
+      <div className="flex flex-col-reverse lg:flex-row gap-0 justify-between mx-10 my-5">
         <p className="text-gray-100">
         Copyright 2023 | All Rights Reserved
         </p>
