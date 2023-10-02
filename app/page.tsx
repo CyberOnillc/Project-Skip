@@ -20,12 +20,12 @@ export default async function Home() {
   };
   return (
     <>
-      <div className="container z-10 w-full  lg:px-5 xl:px-0">
-        <section className="w-full h-screen items-center">
+      <div className="z-10 w-full">
+        <section className="w-full mx-auto h-screen items-center overflow-hidden">
           <Hero></Hero>
         </section>
-        <section className="w-full h-screen py-10"> 
-          <div className="container flex flex-col lg:flex-row lg:px-24 items-center">
+        <section className="container mx-auto w-full py-10">
+          <div className="container lg:no flex flex-col lg:flex-row lg:px-24 items-center">
             <Image className="w-1/2 p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
             <div className="w-1/2 align-middle py-10">
               <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
@@ -34,7 +34,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full h-fit lg:h-screen py-10">
+        <section className="container mx-auto w-full h-fit py-10">
           <div className="container lg:h-1/6 lg:px-24">
             <div className="w-full h-1/2 text-center text-4xl font-bold">Upcoming <span className="text-green-300">Courses</span></div>
             <div className="lg:w-1/2 h-1/2 text-center text-lg mx-auto py-2 px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</div>
@@ -49,34 +49,33 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="w-full h-fit py-10 font-rowdies">
+        <section className="container mx-auto w-full h-fit py-10 font-rowdies">
           <div className="relative  bg-hero bg-cover bg-no-repeat flex flex-col justify-center text-white ">
             <div className="absolute  bg-gradient-to-r from-[#084FC7E5] to-[#7F56D9E5] w-full h-full"></div>
             <div className="py-10 z-10 h-full">
               <h1 className="font-bold text-4xl w-full text-center">Why <span className="text-green-300">learn</span> with our courses?</h1>
               <p className="font-saira py-10 w-full text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</p>
 
-              <div className="flex  px-5 font-saira h-3/4 ">
-                <div className="p-2 flex-1">
-                  <div className="p-5 h-1/3  w-full">
-                    <Image className="h-full w-full p-4" src={'/learn.svg'} alt="icon" height={20} width={20}></Image>
+              <div className="flex justify-center  px-5 font-saira h-3/4 ">
+                <div className="p-2 self-center flex-1">
+                  <div className="m-auto flex justify-center">
+                    <Image className="h-40 w-40 self-center lg:p-10" src={'/learn.svg'} alt="icon" height={20} width={20}></Image>
                   </div>
                   <h3 className="text-lg font-semibold text-center">0.1 Learn</h3>
                   <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
                 </div>
-                <VerticalSeparator></VerticalSeparator>
-                <div className="p-2 flex-1">
-                  <div className="p-5 h-1/3 w-full">
-                    <Image className="h-full w-full p-4" src={'/graduate.svg'} alt="icon" height={20} width={20}></Image>
+                <VerticalSeparator />
+                <div className="p-2 self-center flex-1">
+                  <div className="m-auto flex justify-center">
+                    <Image className="h-40 w-40 self-center lg:p-10" src={'/graduate.svg'} alt="icon" height={20} width={20}></Image>
                   </div>
                   <h3 className="text-lg font-semibold text-center">0.1 Graduate</h3>
                   <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
                 </div>
-                <VerticalSeparator></VerticalSeparator>
-
-                <div className="p-2 flex-1">
-                  <div className="p-5 h-1/3 w-full">
-                    <Image className="h-full w-full p-10" src={'/work.svg'} alt="icon" height={20} width={20}></Image>
+                <VerticalSeparator />
+                <div className="p-2 self-center h-full flex-1">
+                  <div className="m-auto flex justify-center">
+                    <Image className="h-40 w-40 self-center lg:p-10" src={'/work.svg'} alt="icon" height={20} width={20}></Image>
                   </div>
                   <h3 className="text-lg font-semibold text-center">0.3 Work</h3>
                   <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
@@ -99,15 +98,21 @@ export default async function Home() {
           </div>
 
         </section>
-        <section className="w-full py-5">
-          <div  className=" w-full flex justify-center p-2 lg:p-10" >
+        <section className="container mx-auto w-full py-5">
+          <div className=" w-full flex justify-center p-2 lg:p-10" >
             <div className="lg:w-1/2">
               <VideoPlayer src="/video.mp4"></VideoPlayer>
             </div>
           </div>
-          <div className="w-full text-center">
+          <div className="relative flex flex-col justify-center items-center w-full lg:h-60 text-center my-5">
             <h1 className="font-bold text-4xl"><span className="text-[#2AAA94]">Testimonials</span></h1>
             <h3 className="m-5">What our student say about us</h3>
+            <div className="absolute hidden lg:flex justify-between right-0 top-0 bottom-0 lg:min-h-fit w-full">
+              <Image className="p-5 my-auto" width={114} height={121} src={'/left-elipse.png'} alt="left-banner"></Image>
+
+              <Image className="p-5" width={324} height={260} src={'/banner_right.png'} alt="right-banner"></Image>
+            </div>
+
           </div>
           <CardCarousel>
             {reviews.map((review, index) => {
@@ -116,7 +121,7 @@ export default async function Home() {
           </CardCarousel>
 
         </section>
-        <section className="py-5">
+        <section className="container mx-auto py-5">
           <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
             <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
               <h1 className="font-bold text-5xl text-white leading-relaxed">Let's discuss </h1>

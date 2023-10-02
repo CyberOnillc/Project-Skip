@@ -10,6 +10,7 @@ import DropdownMenu from "../shared/dropdown";
 import Image from "next/image";
 import Sidebar from "../shared/sidebar";
 import { Menu } from "lucide-react";
+import useWindowSize from "@/lib/hooks/use-window-size";
 
 interface NavBarProps {
   session: Session | null;

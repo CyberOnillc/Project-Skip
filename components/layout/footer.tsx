@@ -55,7 +55,7 @@ export default function Footer() {
             CyberOniLLC
           </a>
         </p>
-        <div className="flex gap-4 my-2">
+        <div className="flex justify-center gap-4 my-2">
           <Youtube className="" color="white"></Youtube>
           <Linkedin className="" color="white"></Linkedin>
           <Twitter className="" color="white"></Twitter>
