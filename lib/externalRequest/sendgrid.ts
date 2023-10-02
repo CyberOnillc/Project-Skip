@@ -8,8 +8,10 @@ client.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 
 export type Lead = {
-    name: string;
-    email: string
+    firstName?: string;
+    lastName?: string;
+    email: string;
+    city?: string;
 }
 
 
@@ -54,8 +56,9 @@ export async function addToSendGrid(lead: Lead) {
         "contacts": [
             {
                 "email": lead.email,
-                "name": lead.name,
-
+                "first_name": lead.firstName,
+                "last_name": lead.lastName,
+                "city": lead.city,
             }
         ]
     };

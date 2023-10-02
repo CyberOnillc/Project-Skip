@@ -34,7 +34,7 @@ module.exports = {
         "gradient-purple": "linear-gradient(to right, #7F56D9, #08129B)", // Add this line
         "gradient-hero": "linear-gradient(to right, #04016C55, #4A16BDCC)",
         "gradient-button": "linear-gradient(to right, #3023B2, #7F56D9)",
-        "dotted-background": "radial-gradient(circle,#fff 20%, #00000000, #00000000)",
+        "dotted-background": "url('/divider.png')",
         "hero": "url('/hero-bg.png')"
       },
       animation: {

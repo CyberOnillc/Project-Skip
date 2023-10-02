@@ -1,7 +1,7 @@
-import { addToMailChimp } from "@/lib/externalRequest/mailChimp"
 import { revalidatePath } from "next/cache"
 import React from 'react'
 import { redirect } from 'next/navigation'
+import { addToSendGrid } from "@/lib/externalRequest/sendgrid"
 export default function WaitListForm({ cities }: { cities: string[] }) {
     async function create(formData: FormData) {
         'use server'
@@ -18,8 +18,8 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
             }
             console.log(name, email, city)
 
-           const response = await addToMailChimp({ city, email, firstName, lastName })
-            console.log(response)
+           const response = await addToSendGrid({ city, email, firstName, lastName })
+           
 
         } catch (error) {
             console.log(error)

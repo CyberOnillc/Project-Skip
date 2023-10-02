@@ -1,4 +1,5 @@
 import { AddToMarketingDTO, addToMailChimp, getCities } from "@/lib/externalRequest/mailChimp";
+import { addToSendGrid } from "@/lib/externalRequest/sendgrid";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -16,7 +17,7 @@ export async function POST(req: NextRequest) {
     } else {
         firstName = name.split(' ')[0]
     }
-    await addToMailChimp({ firstName, lastName, email, city })
+    await addToSendGrid({ firstName, lastName, email, city })
     return NextResponse.json({ message: "success" }, { status: 200 })
 }
 
