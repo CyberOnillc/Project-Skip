@@ -1,13 +1,11 @@
 "use client";
-import { FC, useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
-import { useSignInModal } from "./sign-in-modal";
-import UserDropdown from "./user-dropdown";
+import { Menu, Search, ShoppingCart, User } from "lucide-react";
 import { Session } from "next-auth";
-import { ShoppingCart, User, Search } from "lucide-react";
-import DropdownMenu from "../shared/dropdown";
 import Image from "next/image";
+import Link from "next/link";
+import { FC, useEffect, useRef, useState } from "react";
+import DropdownMenu from "../shared/dropdown";
 import Sidebar from "../shared/sidebar";
 import { Menu } from "lucide-react";
 import useWindowSize from "@/lib/hooks/use-window-size";
@@ -155,7 +153,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {isSideBarOpen && (
             <Sidebar isOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen}>
               <div className=" left-0 top-full mt-2 flex h-screen w-full flex-col space-y-4 rounded bg-white text-center shadow-lg md:hidden">
-                <div className="mb-5 mt-10 flex flex-col items-center space-y-4  mobile-padding">
+                <div className="mobile-padding mb-5 mt-10 flex flex-col items-center  space-y-4">
                   {menuItemsArray.map((menuItems, index) => (
                     <DropdownMenu
                       key={index}
