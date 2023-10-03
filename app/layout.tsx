@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import Head from "next/head";
 import { Suspense } from "react";
-import { inter, sfPro } from "./fonts";
+import { inter, rowdies, saira, sfPro } from "./fonts";
 export const metadata = {
   image:
     "https://res.cloudinary.com/djao481zq/image/upload//c_thumb,w_1200,h_630,g_auto/v1694298818/Main_LOGO_1_yabyi6.png",
@@ -80,14 +80,12 @@ export default async function RootLayout({
         />
         <meta property="twitter:creator" content="Project_Skip" />
       </Head>
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+      <body className={cx(sfPro.variable, inter.variable, saira.variable, rowdies.variable )}>
+        <div className="fixed h-full w-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
         <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-
-        <main className="justify-centersm:py-8 flex min-h-screen w-full flex-col items-center md:py-16 lg:py-24 xl:py-32">
+        <main className="justify-center my-20 flex min-h-screen w-full flex-col items-center  md:py-16 lg:py-24 lg:my-0 xl:py-32">
           {children}
         </main>
         <Footer />

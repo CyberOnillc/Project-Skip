@@ -8,12 +8,34 @@ module.exports = {
   },
   theme: {
     extend: {
+      padding: {
+        '10%': '10%',
+      },
+      paddingBottom: {
+        '10%': '10%',
+      },
+      paddingTop: {
+        '10%': '10%',
+      },
+      paddingLeft: {
+        '10%': '10%',
+      },
+      paddingRight: {
+        '10%': '10%',
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
+        rowdies: ["var(--font-rowdies)", "system-ui", "sans-serif"],
+        saira: ["var(--font-saira)", "system-ui", "sans-serif"]
+
       },
       backgroundImage: {
         "gradient-purple": "linear-gradient(to right, #7F56D9, #08129B)", // Add this line
+        "gradient-hero": "linear-gradient(to right, #04016C55, #4A16BDCC)",
+        "gradient-button": "linear-gradient(to right, #3023B2, #7F56D9)",
+        "dotted-background": "url('/divider.png')",
+        "hero": "url('/hero-bg.png')"
       },
       animation: {
         "fade-up": "fade-up 0.5s",
@@ -78,5 +100,5 @@ module.exports = {
     }),
   ],
 
-  
+
 };

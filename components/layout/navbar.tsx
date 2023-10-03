@@ -7,8 +7,8 @@ import Link from "next/link";
 import { FC, useEffect, useRef, useState } from "react";
 import DropdownMenu from "../shared/dropdown";
 import Sidebar from "../shared/sidebar";
-import { useSignInModal } from "./sign-in-modal";
-import UserDropdown from "./user-dropdown";
+import { Menu } from "lucide-react";
+import useWindowSize from "@/lib/hooks/use-window-size";
 
 interface NavBarProps {
   session: Session | null;
@@ -84,13 +84,13 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
     <>
       <SignInModal />
       <nav
-        className={`fixed top-0 w-full ${
+        className={`fixed top-0 w-screen max-w-full ${
           scrolled
             ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
             : "bg-white/0"
         } z-30 p-4 transition-all`}
       >
-        <div className="mx-auto flex h-16 w-full max-w-screen-xl flex-wrap items-center justify-between">
+        <div className="mx-auto flex h-16 w-full max-w-screen flex-wrap items-center justify-between">
           <div className="flex items-center">
             {" "}
             <Link href="/">
