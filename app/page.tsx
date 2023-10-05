@@ -124,7 +124,7 @@ export default async function Home() {
         <section className="container mx-auto py-5">
           <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
             <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
-              <h1 className="font-bold text-5xl text-white leading-relaxed">Let's discuss </h1>
+              <h1 className="font-bold text-5xl text-white leading-relaxed">Let&apos;s discuss </h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
               <div className="text-white">
