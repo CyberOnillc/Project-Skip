@@ -7,8 +7,8 @@ function Hero() {
         <div className="w-full h-full bg-hero bg-no-repeat bg-cover text-white">
             <div className="relative w-full h-5/6 bg-gradient-hero">
                 <div className="absolute w-full h-full">
-                    <Image className="absolute w-auto h-full pt-14 right-[5%] object-cover" src={'/hero.png'} alt="hero" height={890} width={718}></Image>
-                    <Image className="absolute invisible md:visible w-1/3 h-full pt-14 -right-10 -bottom-10" src={'/hero-foreground.png'} alt="foreground" height={890} width={718}></Image>
+                    <Image className="absolute w-auto h-full pt-14 right-[2%] object-cover" src={'/hero.png'} alt="hero" height={890} width={718}></Image>
+                    <Image className="object-contain absolute invisible md:visible w-1/3 h-full pt-14 -right-48 -bottom-10" src={'/hero-foreground.png'} alt="foreground" height={1080} width={718}></Image>
                 </div>
 
 
@@ -40,7 +40,7 @@ function Hero() {
                     </div>
 
                     <div className="hidden md:flex lg:w-1/3 p-2 z-30">
-                        <Image src={'/review-quote.png'} alt="quote" height={150} width={24}></Image>
+                        <Image className="w-20 object-contain"  src={'/review-quote.png'} alt="quote" height={150} width={100}></Image>
                         <div className="m-2">
                             <h1>Janet Murray</h1>
                             <p className="text-wrap">Skip transformed my tech journey. The courses are comprehensive, and the networking opportunities are unmatched.</p>

@@ -89,7 +89,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           scrolled
             ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
             : "bg-white/0"
-        } z-30 p-4 transition-all`}
+        } z-30 p-4 transition-all h-28 `}
       >
         <div className="mx-auto flex h-16 w-full max-w-screen flex-wrap items-center justify-between">
           <div className="flex items-center">

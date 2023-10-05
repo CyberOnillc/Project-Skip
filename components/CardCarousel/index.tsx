@@ -1,13 +1,14 @@
 'use client'
 import useSwipe from "@/lib/hooks/use-swipe-gesture"
+import useWindowSize from "@/lib/hooks/use-window-size";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { Children, useState } from 'react'
 import { JsxElement } from "typescript"
 
 function CardCarousel({ cards, children }: React.HTMLAttributes<HTMLDivElement> & { cards?: React.ReactNode[] }) {
-
+    const sildesPerPage = useWindowSize().isMobile ? 1 : 3;
     const list = cards ? cards : children ? Children.toArray(children) : []
-    const totalPages = list.length % 3 === 0 ? list.length / 3 : Math.floor(list.length / 3) + 1;
+    const totalPages = list.length % sildesPerPage === 0 ? list.length / sildesPerPage : Math.floor(list.length / sildesPerPage) + 1;
 
     console.log(totalPages)
     const [currentPage, setCurrentPage] = useState(0);
@@ -22,10 +23,10 @@ function CardCarousel({ cards, children }: React.HTMLAttributes<HTMLDivElement> 
     }
     return (
         <>
-            <div {...swipehandlers} className='flex flex-col justify-center items-center h-full w-full'>
+            <div {...swipehandlers} className='flex flex-col justify-center items-center lg:h-full w-full'>
                 <div className="flex flex-col md:flex-row w-full h-full gap-5">
-                    {list.slice(currentPage * 3, currentPage * 3 + 3).map((card, index) => {
-                        return <div key={index} className="w-full h-full px-5">{card}</div>
+                    {list.slice(currentPage * sildesPerPage, currentPage * sildesPerPage + sildesPerPage).map((card, index) => {
+                        return <div key={index} className="lg:w-1/3 px-5">{card}</div>
                     })}
                 </div>
                 <div className="flex h-1/6 w-full justify-center items-center align-middle gap-5">

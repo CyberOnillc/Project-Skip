@@ -26,7 +26,7 @@ export default async function Home() {
         </section>
         <section className="container mx-auto w-full py-10">
           <div className="container lg:no flex flex-col lg:flex-row lg:px-24 items-center">
-            <Image className="w-1/2 p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
+            <Image className="w-3/4 lg:w-1/2 p-2 lg:p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
             <div className="w-1/2 align-middle py-10">
               <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
               <p>Founded with a vision to uplift the POC community in technology, **Skip** is more than just a learning platform. With our team of expert instructors and partnerships with prestigious educational institutions, we aim to create a ripple effect of positive change in the tech industry.</p>
@@ -141,12 +141,6 @@ export default async function Home() {
             <div className="p-4 lg:p-10 lg:w-1/2"><ContactForm></ContactForm></div>
           </div>
         </section>
-
-        <ComingSoon
-          title="Join Our Tech Community Today!"
-          description="Join Us and Explore Limitless Possibilities in Technology, Tailored for you."
-          ctaLink="https://lmgfwsubawc.typeform.com/to/CQy3URCB"
-        />
 
       </div>
     </>

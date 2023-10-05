@@ -98,8 +98,23 @@ export const reviews: ReviewCardProps[] = [{
     rating: '4'
 },
 {
-    name: 'Jacob Jones',
+    name: 'liz wilde',
+    image: '/prof1.png',
+    content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+    rating: '5'
+},
+
+{
+    name: 'Karen Lake',
     image: '/prof2.png',
     content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
-    rating: '4'
-}]
+    rating: '3'
+},
+{
+    name: 'louis Jones',
+    image: '/prof3.png',
+    content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+    rating: '5'
+}
+
+]

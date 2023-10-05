@@ -85,7 +85,7 @@ export default async function RootLayout({
         <Suspense fallback="...">
           <Nav />
         </Suspense>
-        <main className="justify-center my-20 flex min-h-screen w-full flex-col items-center  md:py-16 lg:py-24 lg:my-0 xl:py-32">
+        <main className="justify-center  flex min-h-screen w-full flex-col items-center  py-28">
           {children}
         </main>
         <Footer />

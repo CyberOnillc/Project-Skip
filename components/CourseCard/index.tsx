@@ -16,20 +16,22 @@ export type CourseCardProps = {
 const CourseCard = ({ course }: CourseCardProps) => {
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full">
-            <Image
-                src={course.image}
-                alt={course.name}
-                className="w-full h-1/2 object-cover"
-                width={300}
-                height={300}
-            />
-            <div className="p-4">
-            <div className="flex justify-between">
-                <p className="text-gray-600">{course.students} students</p>
-                    <p className="text-gray-600">{course.length}</p>
+            <div className="w-full h-1/2">
+                <Image
+                    src={course.image}
+                    alt={course.name}
+                    className="w-full h-full object-cover"
+                    width={300}
+                    height={300}
+                />
             </div>
+            <div className="p-4">
+                <div className="flex justify-between">
+                    <p className="text-gray-600">{course.students} students</p>
+                    <p className="text-gray-600">{course.length}</p>
+                </div>
                 <h2 className="text-lg font-semibold py-5">{course.name}</h2>
-                
+
                 <div className="flex justify-between">
                     <p className="text-gray-600">{course.price}</p>
                     <button className="mt-4  text-gray-800 py-2 px-4 rounded-full">
