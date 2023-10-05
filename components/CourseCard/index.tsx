@@ -1,4 +1,5 @@
 import { ShoppingCart } from "lucide-react";
+import Image from "next/image";
 import { type } from "os";
 import React from 'react';
 
@@ -15,10 +16,12 @@ export type CourseCardProps = {
 const CourseCard = ({ course }: CourseCardProps) => {
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full">
-            <img
+            <Image
                 src={course.image}
                 alt={course.name}
                 className="w-full h-1/2 object-cover"
+                width={300}
+                height={300}
             />
             <div className="p-4">
             <div className="flex justify-between">

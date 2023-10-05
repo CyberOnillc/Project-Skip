@@ -42,8 +42,8 @@ export default async function Home() {
 
           <div className="container lg:h-5/6 py-10 lg:px-24">
             <CardCarousel>
-              {courseCards.map((courseCard) => {
-                return <CourseCard course={courseCard}></CourseCard>
+              {courseCards.map((courseCard, index) => {
+                return <CourseCard key={index} course={courseCard}></CourseCard>
               })}
             </CardCarousel>
           </div>
@@ -90,7 +90,7 @@ export default async function Home() {
             </div>
             <div className="flex gap-4 h-3/4 lg:justify-center px-5 overflow-x-auto max-w-full">
               {categoryCards.map((value, index) => {
-                return <div className="flex-1">
+                return <div className="flex-1" key={index}>
                   <CategoryCard {...value}></CategoryCard>
                 </div>
               })}
@@ -124,7 +124,7 @@ export default async function Home() {
         <section className="container mx-auto py-5">
           <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
             <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
-              <h1 className="font-bold text-5xl text-white leading-relaxed">Let's discuss </h1>
+              <h1 className="font-bold text-5xl text-white leading-relaxed">Let&apos;s discuss </h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
               <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
               <div className="text-white">

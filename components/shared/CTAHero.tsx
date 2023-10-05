@@ -1,6 +1,6 @@
 "use client"
 import React, { FC, FormEvent, ReactNode, useState } from "react";
-import styled from "styled-components";
+import styled  from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -11,8 +11,40 @@ type ComingSoonPageProps = {
   form: ReactNode
 };
 
-const r = 10;
-const duration = 5;
+const Container = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+const InnerContainer = styled.div`
+ 
+  padding-bottom: 14rem;
+  
+  @media (min-width: 640px) {
+  
+  }
+  @media (min-width: 1024px) {
+    overflow: hidden;
+    padding-bottom: 24rem;
+  
+  }
+`;
+
+const Grid = styled.div`
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+`;
+const ImageDiv = styled(motion.div)`
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+`;
+
+const r = 10; // This determines the radius of the circular movement.
+const duration = 5; // This determines the time taken for one circular motion.
 
 const floatVariants = {
   animate: {
