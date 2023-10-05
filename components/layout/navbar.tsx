@@ -7,8 +7,9 @@ import Link from "next/link";
 import { FC, useEffect, useRef, useState } from "react";
 import DropdownMenu from "../shared/dropdown";
 import Sidebar from "../shared/sidebar";
-import { Menu } from "lucide-react";
 import useWindowSize from "@/lib/hooks/use-window-size";
+import { useSignInModal } from "./sign-in-modal";
+import UserDropdown from "./user-dropdown";
 
 interface NavBarProps {
   session: Session | null;
