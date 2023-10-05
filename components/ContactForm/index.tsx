@@ -39,15 +39,15 @@ function ContactForm() {
     return (
         <div className="w-full h-fit mx-auto p-6 bg-neutral-300 rounded-lg shadow-lg">
 
-            {showForm &&<form className="h-full w-full p-6" onSubmit={handleSubmit}>
+            {showForm &&<form className="h-full w-full p-6 flex flex-col justify-center lg:block" onSubmit={handleSubmit}>
                 <div className="mb-4 h-2/6">
-                    <p className="mb-2 font-bold h-1/6">I am interested in ...</p>
-                    <div className="flex justify-start flex-wrap gap-5 h-5/6">
+                    <p className="mb-2 text-center lg:text-left font-bold h-1/6">I am interested in ...</p>
+                    <div className="flex justify-center lg:justify-start flex-wrap gap-5 h-5/6">
                         {['UI/UX design', 'Web design', 'Graphic Design', 'Design System', 'Other'].map((interest, index) => (
                             <button
                                 key={index}
                                 onClick={() => handleInterestClick(interest)}
-                                className={`rounded-lg px-4 py-2 border-2 border-opacity-30 border-purple-800 focus:outline-none ${selectedInterest === interest
+                                className={`h-fit w-fit rounded-lg px-4 py-2 border-2 border-opacity-30 border-purple-800 focus:outline-none ${selectedInterest === interest
                                     ? 'bg-[#A91079] text-white'
                                     : 'bg-transparent hover:bg-blue-200  text-opacity-30 text-purple-800'
                                     }`}
