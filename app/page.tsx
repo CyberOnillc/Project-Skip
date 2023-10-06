@@ -27,9 +27,9 @@ export default async function Home() {
         <section className="container mx-auto w-full py-10">
           <div className="container lg:no flex flex-col lg:flex-row lg:px-24 items-center">
             <Image className="w-3/4 lg:w-1/2 p-2 lg:p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
-            <div className="w-1/2 align-middle py-10">
+            <div className="px-10 lg:px-0 lg:w-1/2 align-middle py-10">
               <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
-              <p>Founded with a vision to uplift the POC community in technology, **Skip** is more than just a learning platform. With our team of expert instructors and partnerships with prestigious educational institutions, we aim to create a ripple effect of positive change in the tech industry.</p>
+              <p className="text-justify">Founded with a vision to uplift the POC community in technology, **Skip** is more than just a learning platform. With our team of expert instructors and partnerships with prestigious educational institutions, we aim to create a ripple effect of positive change in the tech industry.</p>
               <button className="text-white h-10 bg-gradient-button px-5 my-5 rounded-lg">Watch Video</button>
             </div>
           </div>
@@ -124,15 +124,17 @@ export default async function Home() {
         <section className="container mx-auto py-5">
           <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
             <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
-              <h1 className="font-bold text-5xl text-white leading-relaxed">Let&apos;s discuss </h1>
-              <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
-              <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
-              <div className="text-white">
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><Phone className='ml-2'></Phone>+123 456 789</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
+              <div className="text-center lg:text-left">
+                <h1 className="font-bold text-5xl text-white leading-relaxed">Let&apos;s discuss </h1>
+                <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
+                <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
               </div>
-              <div className="flex gap-3 mt-4">
+              <div className="text-white text-center lg:text-left">
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><Phone className='ml-2'></Phone>+123 456 789</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
+              </div>
+              <div className="flex gap-3 mt-4 justify-center lg:justify-start">
                 <Twitter className="" color="white"></Twitter>
                 <Facebook className="" color="white"></Facebook>
                 <Instagram className="" color="white"></Instagram>
