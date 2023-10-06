@@ -130,9 +130,9 @@ export default async function Home() {
                 <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
               </div>
               <div className="text-white text-center lg:text-left">
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><Phone className='ml-2'></Phone>+123 456 789</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex gap-5 mx-auto lg:mx-0"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><Phone className='ml-2'></Phone>+123 456 789</div>
+                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
               </div>
               <div className="flex gap-3 mt-4 justify-center lg:justify-start">
                 <Twitter className="" color="white"></Twitter>
