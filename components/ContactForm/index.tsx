@@ -1,6 +1,6 @@
 'use client'
 import { AlertCircle, Mail, PlaneIcon, Send } from "lucide-react";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { LoadingCircle } from "../shared/icons";
 import Balancer from "react-wrap-balancer";
 
@@ -14,6 +14,11 @@ function ContactForm() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
+    const [isClient, setIsClient] = useState(false)
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
     const handleInterestClick = (interest: string) => {
         setSelectedInterest(interest);
     };
@@ -39,7 +44,7 @@ function ContactForm() {
     return (
         <div className="w-full h-fit mx-auto p-6 bg-neutral-300 rounded-lg shadow-lg">
 
-            {showForm &&<form className="h-full w-full p-6 flex flex-col justify-center lg:block" onSubmit={handleSubmit}>
+            {showForm&& isClient && <form className="h-full w-full p-6 flex flex-col justify-center lg:block" onSubmit={handleSubmit}>
                 <div className="mb-4 h-2/6">
                     <p className="mb-2 text-center lg:text-left font-bold h-1/6">I am interested in ...</p>
                     <div className="flex justify-center lg:justify-start flex-wrap gap-5 h-5/6">
