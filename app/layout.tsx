@@ -81,6 +81,7 @@ export default async function RootLayout({
         />
         <meta property="twitter:creator" content="Project_Skip" />
       </Head>
+      
       <body className={cx(sfPro.variable, inter.variable, saira.variable, rowdies.variable )}>
         <div className="fixed h-full w-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
         <Suspense fallback="...">

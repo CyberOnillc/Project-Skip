@@ -1,17 +1,22 @@
 'use client'
 import { revalidatePath } from "next/cache"
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState , useEffect} from 'react'
 import { redirect } from 'next/navigation'
 import { addToSendGrid } from "@/lib/externalRequest/sendgrid"
 import Modal from "./modal"
 import ModalMessage from "./ModalMessage"
-import EmailInput from "./EmailInput"
-import { error } from "console"
+
 export default function WaitListForm({ cities }: { cities: string[] }) {
     const [showModal, setShowModal] = useState(false);
     const [success, setSuccess] = useState(true);
     const [message, setMessage] = useState("");
     const form = useRef<HTMLFormElement>(null)
+    const [isClient, setIsClient] = useState(false);
+
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
     async function create(formData: FormData) {
         try {
             const name = formData.get('name') as string
@@ -47,7 +52,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
 
     return (
         <>
-            <form
+            {isClient && <form
                 ref={form}
                 className="sm:mx-auto sm:max-w-xl lg:mx-0 z-30"
                 action={create}
@@ -78,7 +83,16 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                     >
                         Email
                     </label>
-                    <EmailInput/>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="mt-2 w-full rounded-md border p-3"
+                        placeholder="Enter your email"
+                        suppressHydrationWarning={true}
+
+                    />
                 </div>
                 <div className="mb-4">
                     <label
@@ -101,7 +115,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
 
                     </select>
                 </div>
-                <div className="mt-3 sm:ml-3 sm:mt-0">
+                <div className="mt-3 lg:ml-0 sm:ml-3 sm:mt-0">
                     <button
                         type="submit"
                         className="block w-full rounded-md bg-cyan-500 px-4 py-3 font-medium text-white shadow hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
@@ -109,9 +123,9 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                         Join Waitlist
                     </button>
                 </div>
-            </form>
+            </form>}
             <Modal showModal={showModal} setShowModal={setShowModal} >
-                <ModalMessage onClose={()=>setShowModal(false)} message={message} isSuccess={success}></ModalMessage>
+                <ModalMessage onClose={() => setShowModal(false)} message={message} isSuccess={success}></ModalMessage>
             </Modal>
         </>
     )
