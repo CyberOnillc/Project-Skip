@@ -107,7 +107,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden justify-center space-x-4 md:flex">
+          <div className="hidden justify-center space-x-4 lg:flex">
             {menuItemsArray.map((menuItems, index) => (
               <DropdownMenu
                 key={index}
@@ -119,7 +119,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           </div>
 
           {/* ... Icons and Login/Signup buttons code ... */}
-          <div className="hidden items-center space-x-4 md:flex">
+          <div className="hidden items-center space-x-4 lg:flex">
             <ShoppingCart />
             <User />
             <Search />
@@ -144,7 +144,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           </div>
 
           {/* Hamburger menu icon for mobile */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button onClick={() => setIsSideBarOpen(true)}>
               <Menu color="#000" size={24} />
             </button>
@@ -153,7 +153,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
           {/* Mobile Menu */}
           {isSideBarOpen && (
             <Sidebar isOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen}>
-              <div className=" left-0 top-full mt-2 flex h-screen w-full flex-col space-y-4 rounded bg-white text-center shadow-lg md:hidden">
+              <div className=" left-0 top-full mt-2 flex h-screen w-full flex-col space-y-4 rounded bg-white text-center shadow-lg lg:hidden">
                 <div className="mobile-padding mb-5 mt-10 flex flex-col items-center  space-y-4">
                   {menuItemsArray.map((menuItems, index) => (
                     <DropdownMenu

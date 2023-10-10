@@ -100,7 +100,7 @@ export default async function Home() {
         </section>
         <section className="container mx-auto w-full py-5">
           <div className=" w-full flex justify-center p-2 lg:p-10" >
-            <div className="lg:w-1/2">
+            <div className="w-full p-4">
               <VideoPlayer src="/video.mp4"></VideoPlayer>
             </div>
           </div>

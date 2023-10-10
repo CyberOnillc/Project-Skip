@@ -66,6 +66,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                         required
                         className="mt-2 w-full rounded-md border p-3"
                         placeholder="Enter your email"
+                        suppressHydrationWarning
 
                     />
                 </div>
