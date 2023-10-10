@@ -12,7 +12,7 @@ import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
 
 interface NavBarProps {
-  session: Session | null;
+ 
 }
 
 const menuItemsArray = [
@@ -44,7 +44,7 @@ const menuItemsArray = [
 ];
 // Dropdown menu items
 
-const NavBar: FC<NavBarProps> = ({ session }) => {
+const NavBar: FC<NavBarProps> = () => {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   const scrolled = useScroll(50);
   const navBarRef = useRef<HTMLElement>(null);
@@ -123,7 +123,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
             <ShoppingCart />
             <User />
             <Search />
-            {session ? (
+            {/* {session ? (
               <UserDropdown session={session} />
             ) : (
               <>
@@ -140,7 +140,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
                   Sign Up
                 </button>
               </>
-            )}
+            )} */}
           </div>
 
           {/* Hamburger menu icon for mobile */}
@@ -166,7 +166,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
                   <ShoppingCart />
                   <User />
                   <Search />
-                  {session ? (
+                  {/* {session ? (
                     <UserDropdown session={session} />
                   ) : (
                     <>
@@ -183,7 +183,7 @@ const NavBar: FC<NavBarProps> = ({ session }) => {
                         Sign Up
                       </button>
                     </>
-                  )}
+                  )} */}
                 </div>
               </div>
             </Sidebar>
