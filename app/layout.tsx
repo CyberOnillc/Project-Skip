@@ -8,6 +8,7 @@ import cx from "classnames";
 import Head from "next/head";
 import { Suspense } from "react";
 import { inter, rowdies, saira, sfPro } from "./fonts";
+import { Metadata } from "next";
 export const metadata = {
   image:
     "https://res.cloudinary.com/djao481zq/image/upload//c_thumb,w_1200,h_630,g_auto/v1694298818/Main_LOGO_1_yabyi6.png",
@@ -94,3 +95,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

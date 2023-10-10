@@ -1,10 +1,18 @@
+'use client'
 import { revalidatePath } from "next/cache"
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { redirect } from 'next/navigation'
 import { addToSendGrid } from "@/lib/externalRequest/sendgrid"
+import Modal from "./modal"
+import ModalMessage from "./ModalMessage"
+import EmailInput from "./EmailInput"
+import { error } from "console"
 export default function WaitListForm({ cities }: { cities: string[] }) {
+    const [showModal, setShowModal] = useState(false);
+    const [success, setSuccess] = useState(true);
+    const [message, setMessage] = useState("");
+    const form = useRef<HTMLFormElement>(null)
     async function create(formData: FormData) {
-        'use server'
         try {
             const name = formData.get('name') as string
             const email = formData.get('email') as string
@@ -16,10 +24,20 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
             } else {
                 firstName = name.split(' ')[0]
             }
-            console.log(name, email, city)
+            const response = await addToSendGrid({ city, email, firstName, lastName })
+            //console.log(response)
+            if (response === 202) {
+                setShowModal(true)
+                setSuccess(true)
+                setMessage("Added successfully Check your Email")
 
-           const response = await addToSendGrid({ city, email, firstName, lastName })
-           
+            } else {
+                setShowModal(true)
+                setSuccess(false)
+                setMessage("Server Error try again later")
+            }
+            form.current?.reset()
+
 
         } catch (error) {
             console.log(error)
@@ -30,6 +48,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
     return (
         <>
             <form
+                ref={form}
                 className="sm:mx-auto sm:max-w-xl lg:mx-0 z-30"
                 action={create}
             >
@@ -59,16 +78,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                     >
                         Email
                     </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="mt-2 w-full rounded-md border p-3"
-                        placeholder="Enter your email"
-                        suppressHydrationWarning
-
-                    />
+                    <EmailInput/>
                 </div>
                 <div className="mb-4">
                     <label
@@ -100,6 +110,9 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                     </button>
                 </div>
             </form>
+            <Modal showModal={showModal} setShowModal={setShowModal} >
+                <ModalMessage onClose={()=>setShowModal(false)} message={message} isSuccess={success}></ModalMessage>
+            </Modal>
         </>
     )
 }
