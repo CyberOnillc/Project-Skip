@@ -3,47 +3,74 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <div className="absolute bg-gradient-to-r from-[#331DA8] to-[#865AEF] text-white  w-full text-center py-10 px-10 font-mont">
-      <div className=" grid lg:grid-cols-4 lg:grid-rows-1 w-full text-center py-10 lg:px-10 font-mont mt-10">
+    <div className="font-mont absolute w-full bg-gradient-to-r from-[#331DA8]  to-[#865AEF] px-10 py-10 text-center text-white">
+      <div className=" font-mont mt-10 grid w-full py-10 text-center lg:grid-cols-4 lg:grid-rows-1 lg:px-10">
         <div className="flex flex-col">
-          <div className="flex gap-3 my-2">
-          </div>
-          <div className="font-semibold text-lg text-left my-2">
-          </div>
-          <div className="font-normal text-base text-left my-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div className="my-2 flex gap-3"></div>
+          <div className="my-2 text-left text-lg font-semibold"></div>
+          <div className="my-2 text-left text-base font-normal">
+            Project Skip Me is dedicated to empowering individuals in the tech
+            industry. We believe in the power of knowledge, collaboration, and
+            innovation to drive positive change. Our mission is to provide
+            high-quality courses and resources that enable you to thrive in the
+            ever-evolving tech landscape. Join us on this exciting journey of
+            learning, networking, and making a meaningful impact in the world of
+            technology.{" "}
           </div>
         </div>
         <div className="flex flex-col">
-          <h2 className="font-bold text-left px-10">Quick Links</h2>
-          <div className="grid grid-cols-2 grid-rows-2 mt-10">
-            <Link className="my-2 text-left px-10" href={'/about'}>About us</Link>
-            <Link className="my-2 text-left px-10" href={'/blog'}>Products</Link>
-            <Link className="my-2 text-left px-10" href={'/contactus'}>Contact Us</Link>
-            <Link className="my-2 text-left px-10" href={'/courses'}>Login</Link>
+          <h2 className="px-10 text-left font-bold">Quick Links</h2>
+          <div className="mt-10 grid grid-cols-2 grid-rows-2">
+            <Link className="my-2 px-10 text-left" href={"/terms_conditions"}>
+              Terms and Conditions
+            </Link>
+            <Link
+              href={"/privacy_policy"}
+              className="my-2 px-10 text-left"
+             
+            >
+              PrivacyPolicy
+            </Link>
+            <Link className="my-2 px-10 text-left" href={"/contactus"}>
+              Contact Us
+            </Link>
+            <Link className="my-2 px-10 text-left" href={"/courses"}>
+              Login
+            </Link>
           </div>
         </div>
         <div className="flex flex-col text-left">
-          <h2 className="font-bold text-left px-10 ">Contact</h2>
-          <div className="flex my-2 h-16 px-10 justify-start items-center align-middle mt-10">
-            <div className="flex justify-center items-center bg-darkblue rounded-full h-10 w-10">
-              <Image className="z-10" src={'/mail.svg'} alt={""} width={20} height={20}></Image>
+          <h2 className="px-10 text-left font-bold ">Contact</h2>
+          <div className="my-2 mt-10 flex h-16 items-center justify-start px-10 align-middle">
+            <div className="bg-darkblue flex h-10 w-10 items-center justify-center rounded-full">
+              <Image
+                className="z-10"
+                src={"/mail.svg"}
+                alt={""}
+                width={20}
+                height={20}
+              ></Image>
             </div>
-            <div className=" rounded h-3/4 w-full "><span className="mx-4">michelle.rivera@example.com</span></div>
+            <div className=" h-3/4 w-full rounded ">
+              <span className="mx-4">NOMT@projectskip.me</span>
+            </div>
           </div>
-          <div className="flex my-2 h-16 px-10 justify-start items-center  align-middle">
-            <div className="flex justify-center items-center bg-darkblue rounded-full h-10 w-10">
-              <Image className="z-10 bg-darkblue rounded-full " src={'/phone.svg'} alt={""} width={20} height={20}></Image>
+          <div className="my-2 flex h-16 items-center justify-start px-10  align-middle">
+            <div className="bg-darkblue flex h-10 w-10 items-center justify-center rounded-full">
+              <Image
+                className="bg-darkblue z-10 rounded-full "
+                src={"/phone.svg"}
+                alt={""}
+                width={20}
+                height={20}
+              ></Image>
             </div>
-            <div className=" rounded h-3/4 w-full"><span className="mx-4">412 444 1124</span></div>
           </div>
         </div>
       </div>
       <hr />
-      <div className="flex flex-col-reverse lg:flex-row gap-0 justify-between mx-10 my-5">
-        <p className="text-gray-100">
-        Copyright 2023 | All Rights Reserved
-        </p>
+      <div className="mx-10 my-5 flex flex-col-reverse justify-between gap-0 lg:flex-row">
+        <p className="text-gray-100">Copyright 2023 | All Rights Reserved</p>
         <p className="text-gray-100">
           Created By{" "}
           <a
@@ -55,7 +82,7 @@ export default function Footer() {
             CyberOniLLC
           </a>
         </p>
-        <div className="flex justify-center gap-4 my-2">
+        <div className="my-2 flex justify-center gap-4">
           <Youtube className="" color="white"></Youtube>
           <Linkedin className="" color="white"></Linkedin>
           <Twitter className="" color="white"></Twitter>

@@ -12,6 +12,7 @@ import { Facebook, Instagram, Linkedin, Locate, LocateIcon, Mail, MapPin, Phone,
 import VerticalSeparator from "@/components/shared/verticalSeparator";
 import ReviewCard from "@/components/ReviewCard";
 import VideoPlayer from "@/components/home/video";
+import { socialMediaLinks } from '../data/sampleData';
 
 export default async function Home() {
 
@@ -21,129 +22,234 @@ export default async function Home() {
   return (
     <>
       <div className="z-10 w-full">
-        <section className="w-full mx-auto h-screen items-center overflow-hidden">
+        <section className="mx-auto h-screen w-full items-center overflow-hidden">
           <Hero></Hero>
         </section>
         <section className="container mx-auto w-full py-10">
-          <div className="container lg:no flex flex-col lg:flex-row lg:px-24 items-center">
-            <Image className="w-3/4 lg:w-1/2 p-2 lg:p-10" src={'/section-2.png'} alt="section-2" width={514} height={120}></Image>
-            <div className="px-10 lg:px-0 lg:w-1/2 align-middle py-10">
+          <div className="lg:no container flex flex-col items-center lg:flex-row lg:px-24">
+            <Image
+              className="w-3/4 p-2 lg:w-1/2 lg:p-10"
+              src={"/section-2.png"}
+              alt="section-2"
+              width={514}
+              height={120}
+            ></Image>
+            <div className="px-10 py-10 align-middle lg:w-1/2 lg:px-0">
               <h1 className="py-5 text-xl font-bold">About The Skip Project</h1>
-              <p className="text-justify">Founded with a vision to uplift the POC community in technology, **Skip** is more than just a learning platform. With our team of expert instructors and partnerships with prestigious educational institutions, we aim to create a ripple effect of positive change in the tech industry.</p>
-              <button className="text-white h-10 bg-gradient-button px-5 my-5 rounded-lg">Watch Video</button>
+              <p className="text-justify">
+                Founded with a vision to uplift the POC community in technology,
+                **Skip** is more than just a learning platform. With our team of
+                expert instructors and partnerships with prestigious educational
+                institutions, we aim to create a ripple effect of positive
+                change in the tech industry.
+              </p>
+              <button className="my-5 h-10 rounded-lg bg-gradient-button px-5 text-white">
+                Watch Video
+              </button>
             </div>
           </div>
         </section>
-        <section className="container mx-auto w-full h-fit py-10">
+        <section className="container mx-auto h-fit w-full py-10">
           <div className="container lg:h-1/6 lg:px-24">
-            <div className="w-full h-1/2 text-center text-4xl font-bold">Upcoming <span className="text-green-300">Courses</span></div>
-            <div className="lg:w-1/2 h-1/2 text-center text-lg mx-auto py-2 px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</div>
+            <div className="h-1/2 w-full text-center text-4xl font-bold">
+              Upcoming <span className="text-green-300">Courses</span>
+            </div>
+            <div className="mx-auto h-1/2 px-10 py-2 text-center text-lg lg:w-1/2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod temporidunt ut labore veniam...
+            </div>
           </div>
 
-          <div className="container lg:h-5/6 py-10 lg:px-24">
+          <div className="container py-10 lg:h-5/6 lg:px-24">
             <CardCarousel>
               {courseCards.map((courseCard, index) => {
-                return <CourseCard key={index} course={courseCard}></CourseCard>
+                return (
+                  <CourseCard key={index} course={courseCard}></CourseCard>
+                );
               })}
             </CardCarousel>
           </div>
         </section>
 
-        <section className="container mx-auto w-full h-fit py-10 font-rowdies">
-          <div className="relative  bg-hero bg-cover bg-no-repeat flex flex-col justify-center text-white ">
-            <div className="absolute  bg-gradient-to-r from-[#084FC7E5] to-[#7F56D9E5] w-full h-full"></div>
-            <div className="py-10 z-10 h-full">
-              <h1 className="font-bold text-4xl w-full text-center">Why <span className="text-green-300">learn</span> with our courses?</h1>
-              <p className="font-saira py-10 w-full text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporidunt ut labore veniam...</p>
+        <section className="container mx-auto h-fit w-full py-10 font-rowdies">
+          <div className="relative  flex flex-col justify-center bg-hero bg-cover bg-no-repeat text-white ">
+            <div className="absolute  h-full w-full bg-gradient-to-r from-[#084FC7E5] to-[#7F56D9E5]"></div>
+            <div className="z-10 h-full py-10">
+              <h1 className="w-full text-center text-4xl font-bold">
+                Why <span className="text-green-300">learn</span> with our
+                courses?
+              </h1>
+              <p className="w-full py-10 text-center font-saira">
+                Are you wondering why our courses are the best choice for your
+                learning journey? Here are three compelling reasons:
+              </p>
 
-              <div className="flex justify-center  px-5 font-saira h-3/4 ">
-                <div className="p-2 self-center flex-1">
+              <div className="flex h-3/4  justify-center px-5 font-saira ">
+                <div className="flex-1 self-center p-2">
                   <div className="m-auto flex justify-center">
-                    <Image className="h-40 w-40 self-center lg:p-10" src={'/learn.svg'} alt="icon" height={20} width={20}></Image>
+                    <Image
+                      className="h-40 w-40 self-center lg:p-10"
+                      src={"/learn.svg"}
+                      alt="icon"
+                      height={20}
+                      width={20}
+                    ></Image>
                   </div>
-                  <h3 className="text-lg font-semibold text-center">0.1 Learn</h3>
-                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                  <h3 className="text-center text-lg font-semibold">
+                    0.1 Learn
+                  </h3>
+                  <p className="max-w-prose text-center font-normal">
+                    Our courses provide a comprehensive and engaging learning
+                    experience. We believe that learning should be a joyful
+                    journey, and our courses are designed to make it just that.
+                    Whether you`re a beginner or an experienced learner, you`ll
+                    find our content both accessible and enriching.
+                  </p>
                 </div>
                 <VerticalSeparator />
-                <div className="p-2 self-center flex-1">
+                <div className="flex-1 self-center p-2">
                   <div className="m-auto flex justify-center">
-                    <Image className="h-40 w-40 self-center lg:p-10" src={'/graduate.svg'} alt="icon" height={20} width={20}></Image>
+                    <Image
+                      className="h-40 w-40 self-center lg:p-10"
+                      src={"/graduate.svg"}
+                      alt="icon"
+                      height={20}
+                      width={20}
+                    ></Image>
                   </div>
-                  <h3 className="text-lg font-semibold text-center">0.1 Graduate</h3>
-                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                  <h3 className="text-center text-lg font-semibold">
+                    0.2 Graduate
+                  </h3>
+                  <p className="max-w-prose text-center font-normal">
+                    We`re proud of our track record of helping learners like you
+                    successfully graduate from our courses. Our dedicated
+                    instructors and well-structured programs ensure that you
+                    acquire the knowledge and skills you need to excel in your
+                    chosen field.
+                  </p>
                 </div>
                 <VerticalSeparator />
-                <div className="p-2 self-center h-full flex-1">
+                <div className="h-full flex-1 self-center p-2">
                   <div className="m-auto flex justify-center">
-                    <Image className="h-40 w-40 self-center lg:p-10" src={'/work.svg'} alt="icon" height={20} width={20}></Image>
+                    <Image
+                      className="h-40 w-40 self-center lg:p-10"
+                      src={"/work.svg"}
+                      alt="icon"
+                      height={20}
+                      width={20}
+                    ></Image>
                   </div>
-                  <h3 className="text-lg font-semibold text-center">0.3 Work</h3>
-                  <p className="text-center font-normal max-w-prose">Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.</p>
+                  <h3 className="text-center text-lg font-semibold">
+                    0.3 Work
+                  </h3>
+                  <p className="max-w-prose text-center font-normal">
+                    We understand that your ultimate goal is to apply what
+                    you`ve learned in a real-world context. That`s why our
+                    courses emphasize practicality and hands-on experience.
+                    You`ll be well-prepared to confidently step into the
+                    workforce and make a meaningful impact from day one.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full h-1/2 py-10">
+          <div className="h-1/2 w-full py-10">
             <div className="w-full text-center">
-              <h1 className="font-bold text-4xl">Top <span className="text-green-300">Categories</span></h1>
+              <h1 className="text-4xl font-bold">
+                Top <span className="text-green-300">Categories</span>
+              </h1>
               <h3 className="m-5">12,000+ unique online course list designs</h3>
             </div>
-            <div className="flex gap-4 h-3/4 lg:justify-center px-5 overflow-x-auto max-w-full">
+            <div className="flex h-3/4 max-w-full gap-4 overflow-x-auto px-5 lg:justify-center">
               {categoryCards.map((value, index) => {
-                return <div className="flex-1" key={index}>
-                  <CategoryCard {...value}></CategoryCard>
-                </div>
+                return (
+                  <div className="flex-1" key={index}>
+                    <CategoryCard {...value}></CategoryCard>
+                  </div>
+                );
               })}
             </div>
           </div>
-
         </section>
         <section className="container mx-auto w-full py-5">
-          <div className=" w-full flex justify-center p-2 lg:p-10" >
-            <div className="w-full p-4">
-              <VideoPlayer src="/video.mp4"></VideoPlayer>
-            </div>
-          </div>
-          <div className="relative flex flex-col justify-center items-center w-full lg:h-60 text-center my-5">
-            <h1 className="font-bold text-4xl"><span className="text-[#2AAA94]">Testimonials</span></h1>
+          <div className="relative my-5 flex w-full flex-col items-center justify-center text-center lg:h-60">
+            <h1 className="text-4xl font-bold">
+              <span className="text-[#2AAA94]">Testimonials</span>
+            </h1>
             <h3 className="m-5">What our student say about us</h3>
-            <div className="absolute hidden lg:flex justify-between right-0 top-0 bottom-0 lg:min-h-fit w-full">
-              <Image className="p-5 my-auto" width={114} height={121} src={'/left-elipse.png'} alt="left-banner"></Image>
+            <div className="absolute bottom-0 right-0 top-0 hidden w-full justify-between lg:flex lg:min-h-fit">
+              <Image
+                className="my-auto p-5"
+                width={114}
+                height={121}
+                src={"/left-elipse.png"}
+                alt="left-banner"
+              ></Image>
 
-              <Image className="p-5" width={324} height={260} src={'/banner_right.png'} alt="right-banner"></Image>
+              <Image
+                className="p-5"
+                width={324}
+                height={260}
+                src={"/banner_right.png"}
+                alt="right-banner"
+              ></Image>
             </div>
-
           </div>
           <CardCarousel>
             {reviews.map((review, index) => {
-              return <ReviewCard {...review} key={index}></ReviewCard>
+              return <ReviewCard {...review} key={index}></ReviewCard>;
             })}
           </CardCarousel>
-
         </section>
         <section className="container mx-auto py-5">
-          <div className="container bg-[#4C2FBD] flex flex-col lg:flex-row justify-center rounded-lg">
-            <div className="p-4 lg:p-10 lg:w-1/2 leading-relaxed lg:pl-20">
+          <div className="container flex flex-col justify-center rounded-lg bg-[#4C2FBD] lg:flex-row">
+            <div className="p-4 leading-relaxed lg:w-1/2 lg:p-10 lg:pl-20">
               <div className="text-center lg:text-left">
-                <h1 className="font-bold text-5xl text-white leading-relaxed">Let&apos;s discuss </h1>
-                <h1 className="font-bold text-5xl text-white leading-relaxed">on something <span className="text-[#A91079]">cool </span></h1>
-                <h1 className="font-bold text-5xl text-white leading-relaxed">together</h1>
+                <h1 className="text-5xl font-bold leading-relaxed text-white">
+                  Let&apos;s discuss{" "}
+                </h1>
+                <h1 className="text-5xl font-bold leading-relaxed text-white">
+                  on something <span className="text-[#A91079]">cool </span>
+                </h1>
+                <h1 className="text-5xl font-bold leading-relaxed text-white">
+                  together
+                </h1>
               </div>
-              <div className="text-white text-center lg:text-left">
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><Mail className='ml-2'></Mail>SaulDesign@gmail.com</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><Phone className='ml-2'></Phone>+123 456 789</div>
-                <div className="hover:bg-[#570A5780] hover:border-[#A91079] hover:border-2 py-3 w-2/3 rounded-lg flex justify-center lg:justify-start gap-5 mx-auto lg:mx-0"><MapPin className='ml-2'></MapPin>123 Street 456 House</div>
+              <div className="text-center text-white lg:text-left">
+                <div className="mx-auto flex  justify-center gap-5 rounded-lg py-3 hover:border-2 hover:border-[#A91079] hover:bg-[#570A5780] lg:mx-0 lg:justify-start">
+                  <Mail className="ml-2"></Mail>NOMT.technologists@gmail.com
+                </div>
+
+                <div className="mx-auto flex  justify-center gap-5 rounded-lg py-3 hover:border-2 hover:border-[#A91079] hover:bg-[#570A5780] lg:mx-0 lg:justify-start">
+                  <MapPin className="ml-2"></MapPin>Denver, Colorado
+                </div>
               </div>
-              <div className="flex gap-3 mt-4 justify-center lg:justify-start">
-                <Twitter className="" color="white"></Twitter>
-                <Facebook className="" color="white"></Facebook>
-                <Instagram className="" color="white"></Instagram>
+              <div className="mt-4 flex justify-center gap-3 lg:justify-start">
+                {socialMediaLinks.map((linkData) => (
+                  <a
+                    key={linkData.platform}
+                    href={linkData.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {linkData.platform === "Twitter" && (
+                      <Twitter className="cursor-pointer" color="white" />
+                    )}
+                    {linkData.platform === "Facebook" && (
+                      <Facebook className="cursor-pointer" color="white" />
+                    )}
+                    {linkData.platform === "Instagram" && (
+                      <Instagram className="cursor-pointer" color="white" />
+                    )}
+                  </a>
+                ))}
               </div>
             </div>
-            <div className="p-4 lg:p-10 lg:w-1/2"><ContactForm></ContactForm></div>
+            <div className="p-4 lg:w-1/2 lg:p-10">
+              <ContactForm></ContactForm>
+            </div>
           </div>
         </section>
-
       </div>
     </>
   );

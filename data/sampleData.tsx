@@ -118,3 +118,30 @@ export const reviews: ReviewCardProps[] = [{
 }
 
 ]
+
+export const socialMediaLinks = [
+  {
+    platform: "Facebook",
+    link: "https://www.facebook.com/project.skip.me",
+  },
+  {
+    platform: "Instagram",
+    link: "https://www.instagram.com/project.skip.me",
+  },
+  {
+    platform: "Twitter",
+    link: "https://twitter.com/project.skip.me",
+  },
+];
+
+export const coursesInterested = [
+  "UI/UX design",
+  "Front End Development",
+  "Design System",
+  "CyberSecurity",
+  "Business Technology",
+  "Back End Development",
+  "Scripting / Automation",
+  "Data Science / AI",
+  "Other",
+];

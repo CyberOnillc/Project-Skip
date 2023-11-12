@@ -25,7 +25,7 @@ async function getData() {
     return choices
   } catch (error) {
     console.log(error)
-    return ['City One', 'City Two', 'City Three']
+    return ['Denver', 'Atlanta', 'Remote']
   }
 }
 
