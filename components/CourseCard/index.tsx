@@ -30,7 +30,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
                     <p className="text-gray-600">{course.students} students</p>
                     <p className="text-gray-600">{course.length}</p>
                 </div>
-                <h2 className="text-lg font-semibold py-5">{course.name}</h2>
+                <h2 className="text-base font-semibold line-clamp-1  lg:line-clamp-2">{course.name}</h2>
 
                 <div className="flex justify-between">
                     <p className="text-gray-600">{course.price}</p>
