@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(req: NextRequest) {
 
-    let { message, email, subject, name } = await req.json() as { message: string, email: string, name: string, subject: string }
+    let { message, email, subject, name } = await req.json() as { message: string, email: string, name: string, subject: string, interest: string }
     // city = json.city;
     let firstName, lastName = '';
     if (name.split(' ').length > 1) {
@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     } else {
         firstName = name.split(' ')[0]
     }
-    await addToSendGrid({ email, firstName, lastName })
+    await addToSendGrid({ email, firstName, lastName, interest: subject })
     const res = await contactForm(email, message, subject)
     if (res === 202) return NextResponse.json({ message: "success" }, { status: 200 })
     else return NextResponse.json({ message: "error occuer while adding:" }, { status: 500 })

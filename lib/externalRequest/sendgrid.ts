@@ -13,6 +13,7 @@ export type Lead = {
     lastName?: string;
     email: string;
     city?: string;
+    interest?:string
 }
 
 
@@ -48,7 +49,7 @@ export async function contactForm(sender: string, message: string, subject: stri
 
 
 export async function addToSendGrid(lead: Lead) {
-
+    console.log(lead);
     const list = await getList(process.env.SENDGRID_LIST as string);
     const data = {
         list_ids: [
@@ -61,6 +62,9 @@ export async function addToSendGrid(lead: Lead) {
                 "first_name": lead.firstName,
                 "last_name": lead.lastName,
                 "city": lead.city,
+                "custom_fields": {
+                    'interestedin': lead.interest
+                }
             }
         ]
     };
@@ -71,7 +75,7 @@ export async function addToSendGrid(lead: Lead) {
         body: data
     }
     let response = await client.request(request);
-   // console.log(response[0].body)
+   console.log(response[0].body)
     return response[0].statusCode
 
 }
@@ -89,7 +93,7 @@ async function getList(listName: string) {
 
     let response = await client.request(request);
 
-    console.log(response[0].body)
+    // console.log(response[0].body)
     for (const list of (response[0].body as { result: Array<any> }).result) {
         if (list.name === listName) return list;
     }

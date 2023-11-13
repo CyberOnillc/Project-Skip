@@ -22,6 +22,8 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
             const name = formData.get('name') as string
             const email = formData.get('email') as string
             const city = formData.get('city') as string
+            const interest=  formData.get('interest') as string
+
             let firstName, lastName = '';
             if (name.split(' ').length > 1) {
                 firstName = name.split(' ')[0]
@@ -29,7 +31,7 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
             } else {
                 firstName = name.split(' ')[0]
             }
-            const response = await addToSendGrid({ city, email, firstName, lastName })
+            const response = await addToSendGrid({ city, email, firstName, lastName, interest: interest })
             //console.log(response)
             if (response === 202) {
                 setShowModal(true)
@@ -121,11 +123,11 @@ export default function WaitListForm({ cities }: { cities: string[] }) {
                 htmlFor="city"
                 className="block text-sm font-medium text-gray-600"
               >
-                City
+                Interest
               </label>
               <select
-                id="Interest"
-                name="Interest"
+              id="interest"
+                name="interest"
                 required
                 className="mt-2 w-full rounded-md border p-3"
                 placeholder="What are you interested in learning?"
