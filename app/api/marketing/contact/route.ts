@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     } else {
         firstName = name.split(' ')[0]
     }
-    addToSendGrid({ email, firstName, lastName })
+    await addToSendGrid({ email, firstName, lastName })
     const res = await contactForm(email, message, subject)
     if (res === 202) return NextResponse.json({ message: "success" }, { status: 200 })
     else return NextResponse.json({ message: "error occuer while adding:" }, { status: 500 })
