@@ -1,7 +1,6 @@
 import React from 'react'
 import ComingSoonPage from "@/components/shared/CTAHero";
 import WaitListForm from "@/components/shared/WaitListForm";
-import { getCities } from "@/lib/externalRequest/mailChimp";
 
 async function JoinWaitList() {
   const cities = await getData() as Array<string>;
@@ -19,14 +18,8 @@ async function JoinWaitList() {
 
 
 async function getData() {
-  try {
-    const choices = await getCities();
 
-    return choices
-  } catch (error) {
-    console.log(error)
-    return ['Denver', 'Atlanta', 'Remote']
-  }
+  return ['Denver', 'Atlanta', 'Remote']
 }
 
 export default JoinWaitList

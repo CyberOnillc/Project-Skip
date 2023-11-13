@@ -1,4 +1,3 @@
-import { AddToMarketingDTO, addToMailChimp, getCities } from "@/lib/externalRequest/mailChimp";
 import { addToSendGrid } from "@/lib/externalRequest/sendgrid";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -22,6 +21,6 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET(req: Request) {
-    const choices = await getCities()
+    const choices = ['Denver', 'Atlanta', 'Remote']
     return NextResponse.json({ message: "success", choices }, { status: 200 })
 }
