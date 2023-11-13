@@ -41,6 +41,7 @@ export async function contactForm(sender: string, message: string, subject: stri
     }
 
     let response = await sgMail.send(msg);
+    console.log("send grid response",response[0].body);
     return response[0].statusCode
 }
 
@@ -70,7 +71,7 @@ export async function addToSendGrid(lead: Lead) {
         body: data
     }
     let response = await client.request(request);
-    console.log(response[0].body)
+   // console.log(response[0].body)
     return response[0].statusCode
 
 }
