@@ -49,7 +49,7 @@ export async function contactForm(sender: string, message: string, subject: stri
 
 
 export async function addToSendGrid(lead: Lead) {
-    console.log(lead);
+    // console.log(lead);
     const list = await getList(process.env.SENDGRID_LIST as string);
     const data = {
         list_ids: [
@@ -97,5 +97,20 @@ async function getList(listName: string) {
     for (const list of (response[0].body as { result: Array<any> }).result) {
         if (list.name === listName) return list;
     }
+
+}
+
+
+export async function sendMailHtml(sender: string, email: string, subject: string ,message: string) {
+    const msg: sgMail.MailDataRequired = {
+        to: email, // Change to your recipient
+        from: process.env.SENDGRID_EMAIL as string, // Change to your verified sender
+        replyTo: sender,
+        subject: subject,
+        html: message,
+    }
+
+    let response = await sgMail.send(msg);
+    return response[0].statusCode
 
 }
