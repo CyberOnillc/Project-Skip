@@ -20,6 +20,11 @@ const nextConfig = {
         destination: "https://github.com/techwithty",
         permanent: false,
       },
+      {
+        source: "/discord",
+        destination: "https://discord.gg/Q9rRVcv5",
+        permanent: false,
+      },
     ];
   },
   async headers() {
