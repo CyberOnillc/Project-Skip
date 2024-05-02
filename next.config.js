@@ -25,6 +25,12 @@ const nextConfig = {
         destination: "https://discord.gg/Q9rRVcv5",
         permanent: false,
       },
+      {
+        source: "/int-prolv-01",
+        destination:
+          "https://www.eventbrite.com/e/empowertech-launch-your-career-in-tech-with-project-skip-tickets-895665909847",
+        permanent: false,
+      },
     ];
   },
   async headers() {
