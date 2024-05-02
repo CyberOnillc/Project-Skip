@@ -27,13 +27,13 @@ const nextConfig = {
       },
       {
         source: "/int-prolv-01",
-        destination: "https://www.eventbrite.com/o/project-skip-me-83872736963",
+        destination:
+          "https://www.eventbrite.com/e/empowertech-launch-your-career-in-tech-with-project-skip-tickets-895665909847?aff=ebdsoporgprofile",
         permanent: false,
       },
       {
         source: "/events",
-        destination:
-          "https://www.eventbrite.com/e/empowertech-launch-your-career-in-tech-with-project-skip-tickets-895665909847?aff=ebdsoporgprofile",
+        destination: "https://www.eventbrite.com/o/project-skip-me-83872736963",
         permanent: false,
       },
     ];
